@@ -941,29 +941,98 @@ function initColumnPickers(){['fd','wealthlite','personalmf','indianeq','useq','
 
 let liveBusy=false,lastLiveUpdate=null;
 let usdInrRate=(function(){try{const v=+localStorage.getItem('folio_usdinr_rate');return v>0?v:88.5;}catch{return 88.5;}})();
+const ALPHA_VANTAGE_KEY='demo';
+// thingproxy.freeboard.io is discontinued (DNS no longer resolves) and allorigins is flaky,
+// so codetabs and cors.x2u.in are tried first as more reliable current options, with
+// allorigins kept as a last-ditch extra attempt.
+const CORS_PROXY_BUILDERS=[
+  url=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+  url=>`https://cors.x2u.in/${url}`,
+  url=>`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+];
 
-function fetchTimeout(url,ms=10000){
-  const ctrl=new AbortController();
-  const t=setTimeout(()=>ctrl.abort(),ms);
-  return fetch(url,{signal:ctrl.signal}).finally(()=>clearTimeout(t));
+function isLocalFileOrigin(){
+  return typeof location!=='undefined' && location.protocol==='file:';
 }
 
-// Convert portfolio symbols into Yahoo Finance-compatible symbols.
-// Indian shares use .NS/.BO and bare U.S. tickers should stay as the plain ticker.
+async function fetchTimeout(url,ms=10000){
+  const ctrl=new AbortController();
+  const t=setTimeout(()=>ctrl.abort(),ms);
+  try{
+    // Try the direct request first — mfapi.in and frankfurter.app send
+    // Access-Control-Allow-Origin: * and work fine even from a file:// page.
+    // Stooq and Yahoo Finance do NOT allow browser cross-origin requests, so
+    // for those (and any other source that fails direct) we fall back to
+    // public CORS proxies below.
+    try{
+      const res=await fetch(url,{signal:ctrl.signal});
+      if(res.ok) return res;
+      throw new Error('http '+res.status);
+    }catch(directErr){
+      if(!isLocalFileOrigin()) throw directErr;
+      let lastErr=directErr;
+      for(const buildProxyUrl of CORS_PROXY_BUILDERS){
+        try{
+          const res=await fetch(buildProxyUrl(url),{signal:ctrl.signal});
+          if(res.ok) return res;
+          lastErr=new Error(`${buildProxyUrl(url)} http ${res.status}`);
+        }catch(e){
+          lastErr=e;
+        }
+      }
+      throw lastErr;
+    }
+  }finally{clearTimeout(t);}
+}
+
+// Convert portfolio symbols into a format that public quote endpoints can resolve.
+// Indian shares use .NS/.BO, U.S. tickers use .US, and special characters such as '&' are stripped.
 function toQuoteSymbol(raw){
   const s=String(raw||'').trim();
   if(!s)return null;
 
-  // Remove unsupported characters that can break public data lookups while preserving common suffixes.
   const cleaned=s.replace(/[^A-Z0-9.&-]/gi,'');
   if(!cleaned)return null;
 
   const upper=cleaned.toUpperCase();
   if(upper.endsWith('.NS')||upper.endsWith('.BO')||upper.endsWith('.IN')||upper.endsWith('.US'))return upper;
-
-  // Bare ticker (AMZN, MSFT, QQQ, VOO, etc.) should be sent as-is.
   if(/^[A-Z0-9]+$/.test(upper))return upper;
   return upper;
+}
+
+function toStooqSymbol(raw){
+  const s=String(raw||'').trim();
+  if(!s)return null;
+
+  const cleaned=s.replace(/[^A-Z0-9.&-]/gi,'');
+  if(!cleaned)return null;
+
+  const upper=cleaned.toUpperCase();
+  if(upper.endsWith('.NS')||upper.endsWith('.BO')||upper.endsWith('.IN')||upper.endsWith('.US'))return upper.toLowerCase();
+  if(/^[A-Z0-9]+$/.test(upper))return `${upper.toLowerCase()}.us`;
+  return upper.toLowerCase();
+}
+
+function toAlphaVantageSymbol(raw){
+  const s=String(raw||'').trim();
+  if(!s)return null;
+  const cleaned=s.replace(/[^A-Z0-9.&-]/gi,'');
+  if(!cleaned)return null;
+  const upper=cleaned.toUpperCase();
+  if(upper.endsWith('.NS'))return `NSE:${upper.replace(/\.NS$/,'')}`;
+  if(upper.endsWith('.BO'))return `BSE:${upper.replace(/\.BO$/,'')}`;
+  if(upper.endsWith('.IN'))return `NSE:${upper.replace(/\.IN$/,'')}`;
+  if(upper.endsWith('.US'))return upper.replace(/\.US$/,'');
+  return upper;
+}
+
+function parseStooqCsv(text){
+  const lines=text.trim().split(/\r?\n/).filter(Boolean);
+  if(lines.length<2)return null;
+  const cols=lines[1].split(',');
+  const price=Number(cols[6]);
+  if(Number.isFinite(price)&&price>0)return {price,prevClose:price};
+  return null;
 }
 
 async function fetchMFNav(schemeCode){
@@ -976,24 +1045,63 @@ async function fetchMFNav(schemeCode){
   return{nav,prevNav:+(d[1]?.nav)||nav,date:d[0]?.date};
 }
 
-// Yahoo Finance chart endpoint — works for Indian and US equities from the browser.
+// Stooq is tried first because it is usually the most reliable public CORS source for browser-based portfolios.
+// Yahoo Finance and Alpha Vantage remain as fallbacks when a symbol is not available from Stooq.
 async function fetchStockQuote(symbol){
   const quoteSymbol=toQuoteSymbol(symbol);
-  if(!quoteSymbol){throw new Error('unmappable symbol');}
-  const url=`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(quoteSymbol)}?interval=1d&range=2d`;
-  const res=await fetchTimeout(url);
-  if(!res.ok){
-    if(res.status===404||res.status===400){throw new Error('unsupported symbol');}
-    throw new Error('yahoo http '+res.status);
+  const stooqSymbol=toStooqSymbol(symbol);
+  const alphaSymbol=toAlphaVantageSymbol(symbol);
+  if(!quoteSymbol&&!stooqSymbol&&!alphaSymbol){throw new Error('unmappable symbol');}
+
+  const attempts=[
+    async()=>{
+      if(!stooqSymbol)throw new Error('no stooq symbol');
+      const res=await fetchTimeout(`https://stooq.com/q/l/?s=${encodeURIComponent(stooqSymbol)}&f=sd2t2ohlcv&h&e=csv`);
+      if(!res.ok)throw new Error('stooq http '+res.status);
+      const text=await res.text();
+      const parsed=parseStooqCsv(text);
+      if(!parsed)throw new Error(`stooq returned no price for ${stooqSymbol}`);
+      return parsed;
+    },
+    async()=>{
+      if(!quoteSymbol)throw new Error('no yahoo symbol');
+      const url=`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(quoteSymbol)}?interval=1d&range=2d`;
+      const res=await fetchTimeout(url);
+      if(!res.ok){
+        if(res.status===404||res.status===400)throw new Error('unsupported symbol');
+        throw new Error('yahoo http '+res.status);
+      }
+      const j=await res.json();
+      const result=j.chart?.result?.[0];
+      const quotes=result?.indicators?.quote?.[0]?.close || [];
+      const prices=quotes.filter(v=>typeof v==='number'&&!Number.isNaN(v));
+      const close=Number(prices[prices.length-1] ?? result?.meta?.regularMarketPrice);
+      const prevClose=Number(prices[prices.length-2] ?? result?.meta?.chartPreviousClose ?? close);
+      if(!close||close<=0)throw new Error(`yahoo returned no price for ${quoteSymbol}`);
+      return {price:close,prevClose:prevClose||close};
+    },
+    async()=>{
+      if(!alphaSymbol)throw new Error('no alpha symbol');
+      const avUrl=`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${encodeURIComponent(alphaSymbol)}&apikey=${ALPHA_VANTAGE_KEY}`;
+      const res=await fetchTimeout(avUrl);
+      if(!res.ok)throw new Error('alpha http '+res.status);
+      const j=await res.json();
+      const q=j['Global Quote'];
+      const price=Number(q?.['05. price']);
+      const prevClose=Number(q?.['08. previous close']);
+      if(Number.isFinite(price)&&price>0){
+        return {price,prevClose:Number.isFinite(prevClose)&&prevClose>0?prevClose:price};
+      }
+      throw new Error(`alpha returned no price for ${alphaSymbol}`);
+    }
+  ];
+
+  let lastErr;
+  for(const attempt of attempts){
+    try{return await attempt();}
+    catch(e){lastErr=e; await new Promise(r=>setTimeout(r,250));}
   }
-  const j=await res.json();
-  const result=j.chart?.result?.[0];
-  const quotes=result?.indicators?.quote?.[0]?.close || [];
-  const prices=quotes.filter(v=>typeof v==='number'&&!Number.isNaN(v));
-  const close=Number(prices[prices.length-1] ?? result?.meta?.regularMarketPrice);
-  const prevClose=Number(prices[prices.length-2] ?? result?.meta?.chartPreviousClose ?? close);
-  if(!close||close<=0)throw new Error(`yahoo returned no price for ${quoteSymbol}`);
-  return{price:close,prevClose:prevClose||close};
+  throw lastErr||new Error('all quote sources failed');
 }
 
 async function fetchUsdInrRate(){
@@ -1104,7 +1212,7 @@ async function refreshAllLivePrices(){
           console.warn('[live-prices] equity failed:',sym,'→',toQuoteSymbol(sym),e.message);
         }
       }
-    },3,300);
+    },2,600);
     [...db.indianeq,...db.useq,...db.sgb].forEach(r=>{
       const q=qCache[r.symbol];
       if(q){
