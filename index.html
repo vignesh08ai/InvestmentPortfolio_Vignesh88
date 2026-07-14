@@ -1,518 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Tracker</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<style>
-:root{
-  --bg:#0c1117;--s1:#131b24;--s2:#1a2535;--s3:#1f2e42;--s4:#243350;
-  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);
-  --text:#e8f0fe;--muted:#6b7fa3;--muted2:#3d4f6b;
-  --blue:#4d9fff;--green:#0fd98a;--red:#f7546a;--gold:#f7c054;--purple:#a78bfa;--teal:#22d3ee;
-  --blue-bg:rgba(77,159,255,0.1);--green-bg:rgba(15,217,138,0.08);
-  --red-bg:rgba(247,84,106,0.08);--gold-bg:rgba(247,192,84,0.1);
-  --r:10px;--r2:14px;--shadow:0 8px 32px rgba(0,0,0,0.5);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:13px;line-height:1.5}
-::-webkit-scrollbar{width:5px;height:5px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--s3);border-radius:3px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swamy Saranam - Portfolio Tracker</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --green: #10b981;
+      --red: #ef4444;
+      --gold: #f59e0b;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+      --teal: #14b8a6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); display: flex; height: 100vh; overflow: hidden; }
+    
+    /* Sidebar Layout */
+    .sidebar { width: 260px; background: #0b0f19; border-right: 1px solid var(--border); display: flex; flex-direction: column; }
+    .logo-area { padding: 24px; border-bottom: 1px solid var(--border); font-weight: bold; font-size: 1.1rem; letter-spacing: 0.5px; }
+    .nav-links { list-style: none; padding: 16px 0; flex: 1; overflow-y: auto; }
+    .nav-links li a { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; color: var(--muted); text-decoration: none; font-size: 0.95rem; transition: all 0.2s; }
+    .nav-links li a:hover, .nav-links li.active a { color: var(--text); background: var(--card-bg); }
+    .nav-links li.active { border-left: 4px solid var(--blue); }
+    .cnt-badge { background: var(--border); color: var(--text); font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; font-weight: 600; }
 
-/* ── SIDEBAR ── */
-.sidebar{
-  position:fixed;left:0;top:0;bottom:0;width:230px;
-  background:var(--s1);border-right:1px solid var(--border);
-  display:flex;flex-direction:column;z-index:200;
-}
-.sb-logo{padding:20px 18px 14px;border-bottom:1px solid var(--border)}
-.sb-brand{display:flex;align-items:center;gap:10px}
-.sb-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#4d9fff,#0fd98a);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
-.sb-name{font-size:15px;font-weight:600}
-.sb-owner{font-size:11px;color:var(--muted);margin-top:1px}
-.sb-nav{flex:1;overflow-y:auto;padding:10px 8px}
-.sb-section{font-size:10px;color:var(--muted2);letter-spacing:.08em;text-transform:uppercase;padding:10px 10px 5px;font-weight:600}
-.nav-btn{
-  display:flex;align-items:center;gap:10px;width:100%;
-  padding:9px 12px;border-radius:8px;border:none;background:none;
-  color:var(--muted);font-size:13px;font-weight:400;cursor:pointer;
-  transition:all .15s;text-align:left;margin-bottom:1px;
-  font-family:'Inter',sans-serif;
-}
-.nav-btn i{width:16px;text-align:center;font-size:13px;flex-shrink:0}
-.nav-btn .cnt{margin-left:auto;font-size:10px;background:var(--s3);color:var(--muted);padding:1px 6px;border-radius:10px;font-weight:500}
-.nav-btn:hover{background:var(--s2);color:var(--text)}
-.nav-btn.active{background:var(--blue-bg);color:var(--blue);font-weight:500}
-.nav-btn.active .cnt{background:rgba(77,159,255,.2);color:var(--blue)}
-.sb-totals{padding:14px 16px;border-top:1px solid var(--border)}
-.sb-total-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0}
-.sb-total-label{font-size:11px;color:var(--muted)}
-.sb-total-val{font-size:12px;font-weight:600;font-family:'JetBrains Mono',monospace}
+    /* Main Container */
+    .main-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .header { height: 70px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: #0b0f19; }
+    .header-title { font-size: 1.25rem; font-weight: 600; }
+    .grand-totals { display: flex; gap: 24px; align-items: center; }
+    .total-item { text-align: right; }
+    .total-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .total-val { font-size: 1.1rem; font-weight: bold; margin-top: 2px; }
 
-/* ── MAIN ── */
-.main{margin-left:230px;min-height:100vh;padding:24px 28px}
-.page{display:none;animation:fadeIn .2s ease}
-.page.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    /* Pages Container */
+    .pages-container { flex: 1; padding: 32px; overflow-y: auto; }
+    .page { display: none; }
+    .page.active { display: block; }
 
-/* ── PAGE HEADER ── */
-.ph{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:22px;gap:12px;flex-wrap:wrap}
-.ph-left h1{font-size:20px;font-weight:600;color:var(--text)}
-.ph-left p{font-size:12px;color:var(--muted);margin-top:2px}
-.ph-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
+    /* Grid & Cards (Dashboard) */
+    .dash-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+    .sum-card { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--c); padding: 20px; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; height: 130px; }
+    .sum-label { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+    .sum-val { font-size: 1.5rem; font-weight: bold; margin: 10px 0; }
+    .sum-sub { font-size: 0.8rem; color: var(--muted); display: flex; justify-content: space-between; }
 
-/* ── BUTTONS ── */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;border:none;font-size:12px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;white-space:nowrap}
-.btn-blue{background:var(--blue);color:#fff}
-.btn-blue:hover{background:#6aadff}
-.btn-ghost{background:var(--s2);color:var(--text);border:1px solid var(--border2)}
-.btn-ghost:hover{background:var(--s3)}
-.btn-red{background:rgba(247,84,106,.15);color:var(--red);border:1px solid rgba(247,84,106,.2)}
-.btn-red:hover{background:rgba(247,84,106,.25)}
-.btn-sm{padding:5px 10px;font-size:11px}
-
-/* ── SUMMARY GRID ── */
-.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
-.sum-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r2);padding:16px 18px;position:relative;overflow:hidden}
-.sum-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--c,var(--blue))}
-.sum-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:500;margin-bottom:6px}
-.sum-val{font-size:20px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--vc,var(--text));line-height:1.1}
-.sum-sub{font-size:11px;color:var(--muted);margin-top:5px}
-.sum-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:26px;color:#fff;opacity:.18}
-
-/* ── CHART GRID ── */
-.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
-.chart-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
-.chart-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r2);padding:18px}
-.chart-card h3{font-size:13px;font-weight:500;margin-bottom:2px}
-.chart-card p{font-size:11px;color:var(--muted);margin-bottom:14px}
-.chart-wrap{position:relative}
-
-/* ── TABLE ── */
-.tcard{background:var(--s1);border:1px solid var(--border);border-radius:var(--r2);overflow:visible;margin-bottom:20px}
-.toolbar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);flex-wrap:wrap;overflow:visible}
-.col-picker-wrap{position:relative;z-index:9999}
-.col-picker{position:absolute;top:calc(100% + 6px);right:0;display:none;background:var(--s1);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:10px 12px;min-width:220px;max-width:320px;max-height:260px;overflow-y:auto;box-shadow:0 16px 34px rgba(0,0,0,.35);z-index:9999}
-.col-picker.open{display:block}
-.col-picker .col-option{display:flex;align-items:center;gap:10px;padding:8px 4px;font-size:12px;color:var(--text);white-space:nowrap}
-.col-picker .col-option input{accent-color:var(--blue)}
-.search-box{position:relative;flex:1;min-width:160px}
-.search-box i{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:12px}
-.search-box input{width:100%;background:var(--s2);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:12px;padding:7px 10px 7px 30px;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s}
-.search-box input:focus{border-color:var(--blue)}
-.search-box input::placeholder{color:var(--muted2)}
-select.flt{background:var(--s2);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:12px;padding:7px 10px;outline:none;cursor:pointer;font-family:'Inter',sans-serif}
-select.flt:focus{border-color:var(--blue)}
-.twrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse}
-thead th{padding:9px 12px;text-align:right;font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none;background:var(--s1);position:sticky;top:0;z-index:5}
-thead th:first-child{text-align:left}
-thead th:hover{color:var(--text)}
-thead th.sorted{color:var(--blue)}
-thead th .si{opacity:.3;margin-left:3px;font-size:9px}
-thead th.sorted .si{opacity:1}
-tbody tr{border-bottom:1px solid var(--border);transition:background .1s}
-tbody tr:last-child{border-bottom:none}
-tbody tr:hover{background:var(--s2)}
-tbody td{padding:10px 12px;text-align:right;vertical-align:middle;font-size:12px}
-tbody td:first-child{text-align:left}
-.tfooter{padding:9px 16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}
-.mono{font-family:'JetBrains Mono',monospace}
-
-/* ── PILLS ── */
-.pill{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500;white-space:nowrap}
-.pill.g{background:var(--green-bg);color:var(--green)}
-.pill.r{background:var(--red-bg);color:var(--red)}
-.pill.n{background:var(--s3);color:var(--muted)}
-.pill.b{background:var(--blue-bg);color:var(--blue)}
-.pill.gold{background:var(--gold-bg);color:var(--gold)}
-
-/* ── TAGS ── */
-.tag{display:inline-flex;align-items:center;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.03em;margin-left:5px}
-.tag-sip{background:rgba(77,159,255,.15);color:var(--blue)}
-.tag-elss{background:rgba(15,217,138,.12);color:var(--green)}
-.tag-nse{background:rgba(167,139,250,.12);color:var(--purple)}
-.tag-bse{background:rgba(34,211,238,.12);color:var(--teal)}
-.tag-nasdaq{background:rgba(247,192,84,.12);color:var(--gold)}
-
-/* ── ROW ACTIONS ── */
-.ra{display:flex;align-items:center;gap:3px;justify-content:flex-end}
-.ab{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:12px;transition:all .1s;background:transparent;color:var(--muted)}
-.ab:hover{background:var(--s3);color:var(--text)}
-.ab.del:hover{background:rgba(247,84,106,.15);color:var(--red)}
-
-.display-none { display: none !important; }
-
-/* ── RESPONSIVE ── */
-@media(max-width:860px){
-  .sidebar{width:56px}
-  .sb-name,.sb-owner,.nav-btn span,.nav-btn .cnt,.sb-section,.sb-totals .sb-total-label,.sb-totals .sb-total-val{display:none}
-  .sb-icon{width:30px;height:30px;font-size:13px}
-  .main{margin-left:56px;padding:14px}
-  .chart-grid,.chart-grid-3{grid-template-columns:1fr}
-}
-</style>
+    /* Tables */
+    .table-container { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+    th { background: #131d31; color: var(--muted); font-weight: 600; padding: 14px 18px; border-bottom: 1px solid var(--border); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; }
+    td { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    .up { color: var(--green); font-weight: 600; }
+    .down { color: var(--red); font-weight: 600; }
+  </style>
 </head>
 <body>
 
-<!-- ══ SIDEBAR ══ -->
-<nav class="sidebar">
-  <div class="sb-logo">
-    <div class="sb-brand">
-      <div class="sb-icon">₹</div>
-      <div>
-        <div class="sb-name">Swamy Saranam</div>
-        <div class="sb-owner">Portfolio Tracker</div>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="logo-area">Swami Saranam</div>
+    <ul class="nav-links">
+      <li class="active" data-page="page-dash"><a href="#">Dashboard <span></span></a></li>
+      <li data-page="page-fd"><a href="#">Fixed Deposits <span class="cnt-badge" id="cnt-fd">0</span></a></li>
+      <li data-page="page-wl"><a href="#">Wealthlite MF <span class="cnt-badge" id="cnt-wl">0</span></a></li>
+      <li data-page="page-pmf"><a href="#">Personal MF <span class="cnt-badge" id="cnt-pmf">0</span></a></li>
+      <li data-page="page-ie"><a href="#">Indian Equity <span class="cnt-badge" id="cnt-ie">0</span></a></li>
+      <li data-page="page-us"><a href="#">US Equity <span class="cnt-badge" id="cnt-us">0</span></a></li>
+      <li data-page="page-sgb"><a href="#">SGB / Gold <span class="cnt-badge" id="cnt-sgb">0</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+    <header class="header">
+      <div class="header-title" id="main-title">Dashboard Overview</div>
+      <div class="grand-totals">
+        <div class="total-item">
+          <div class="total-label">Total Invested</div>
+          <div class="total-val" id="grand-inv">₹0.00</div>
+        </div>
+        <div class="total-item">
+          <div class="total-label">Current Value</div>
+          <div class="total-val" id="grand-cur">₹0.00</div>
+        </div>
+        <div class="total-item">
+          <div class="total-label">Net Returns</div>
+          <div class="total-val" id="grand-ret">₹0.00</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="pages-container">
+      <!-- 1. Dashboard Page -->
+      <div id="page-dash" class="page active">
+        <h2>Asset Class Distribution</h2>
+        <div class="dash-grid" id="cat-tiles"></div>
+      </div>
+
+      <!-- 2. Fixed Deposits Page -->
+      <div id="page-fd" class="page">
+        <h2>Fixed Deposit Details</h2>
+        <div class="table-container" id="table-fd"></div>
+      </div>
+
+      <!-- 3. Wealthlite Mutual Funds Page -->
+      <div id="page-wl" class="page">
+        <h2>Wealthlite MF Details</h2>
+        <div class="table-container" id="table-wl"></div>
+      </div>
+
+      <!-- 4. Personal Mutual Funds Page -->
+      <div id="page-pmf" class="page">
+        <h2>Personal MF Details</h2>
+        <div class="table-container" id="table-pmf"></div>
+      </div>
+
+      <!-- 5. Indian Equity Page -->
+      <div id="page-ie" class="page">
+        <h2>Indian Equity Portfolio</h2>
+        <div class="table-container" id="table-ie"></div>
+      </div>
+
+      <!-- 6. US Equity Page -->
+      <div id="page-us" class="page">
+        <h2>US Equity Portfolio</h2>
+        <div class="table-container" id="table-us"></div>
+      </div>
+
+      <!-- 7. SGB / Gold Page -->
+      <div id="page-sgb" class="page">
+        <h2>SGB / Gold Holdings</h2>
+        <div class="table-container" id="table-sgb"></div>
       </div>
     </div>
-  </div>
-  <div class="sb-nav">
-    <div class="sb-section">Overview</div>
-    <button class="nav-btn active" onclick="gotoPage('dashboard',this)"><i class="fa fa-chart-pie"></i><span>Dashboard</span></button>
-    <div class="sb-section">Investments</div>
-    <button class="nav-btn" onclick="gotoPage('fd',this)"><i class="fa fa-landmark"></i><span>Fixed Deposits</span><span class="cnt" id="cnt-fd">0</span></button>
-    <button class="nav-btn" onclick="gotoPage('wealthlite',this)"><i class="fa fa-chart-line"></i><span>Wealth Elite MF</span><span class="cnt" id="cnt-wl">0</span></button>
-    <button class="nav-btn" onclick="gotoPage('personalmf',this)"><i class="fa fa-folder-open"></i><span>Personal MF</span><span class="cnt" id="cnt-pmf">0</span></button>
-    <button class="nav-btn" onclick="gotoPage('indianeq',this)"><i class="fa fa-indian-rupee-sign"></i><span>Indian Equity</span><span class="cnt" id="cnt-ie">0</span></button>
-    <button class="nav-btn" onclick="gotoPage('useq',this)"><i class="fa fa-dollar-sign"></i><span>US Equity</span><span class="cnt" id="cnt-us">0</span></button>
-    <button class="nav-btn" onclick="gotoPage('sgb',this)"><i class="fa fa-coins"></i><span>SGB / Gold</span><span class="cnt" id="cnt-sgb">0</span></button>
-  </div>
-  <div class="sb-totals">
-    <div class="sb-total-row"><span class="sb-total-label">Total Invested</span><span class="sb-total-val" id="sb-inv">—</span></div>
-    <div class="sb-total-row"><span class="sb-total-label">Current Value</span><span class="sb-total-val" id="sb-val">—</span></div>
-    <div class="sb-total-row"><span class="sb-total-label">Total Return</span><span class="sb-total-val" id="sb-ret">—</span></div>
-  </div>
-</nav>
+  </main>
 
-<!-- ══ MAIN ══ -->
-<main class="main">
-
-<!-- ════ DASHBOARD ════ -->
-<div class="page active" id="page-dashboard">
-  <div class="ph">
-    <div class="ph-left"><h1>Portfolio Dashboard</h1><p id="dash-ts">—</p><p id="live-badge" style="font-size:11px;color:var(--green);margin-top:3px"><i class="fa fa-circle" style="font-size:6px;margin-right:5px"></i>Live · pending…</p></div>
-    <div class="ph-actions">
-      <button class="btn btn-ghost" onclick="refreshAllLivePrices()"><i class="fa fa-rotate-right"></i> Refresh Prices</button>
-    </div>
-  </div>
-
-  <div class="sum-grid" style="grid-template-columns: repeat(3, 1fr);">
-    <div class="sum-card" style="--c: var(--blue)"><div class="sum-label">Total Invested</div><div class="sum-val" id="h-inv">₹0.00</div></div>
-    <div class="sum-card" style="--c: var(--green)"><div class="sum-label">Total Gain / Loss</div><div class="sum-val" id="h-gl">₹0.00</div></div>
-    <div class="sum-card" style="--c: var(--gold)"><div class="sum-label">Overall Return</div><div class="sum-val" id="h-ret">0.00%</div></div>
-  </div>
-
-  <div class="sum-grid" id="cat-tiles"></div>
-</div>
-
-<!-- ════ INDIAN EQUITY ════ -->
-<div class="page" id="page-indianeq">
-  <div class="ph">
-    <div class="ph-left"><h1>Indian Equity</h1><p id="ie-sub">—</p></div>
-  </div>
-  <div class="tcard">
-    <div class="twrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Stock</th>
-            <th>Owner</th>
-            <th>Symbol</th>
-            <th>Exch</th>
-            <th>Qty</th>
-            <th>Avg Price</th>
-            <th>CMP</th>
-            <th>Invested</th>
-            <th>Value</th>
-            <th>Gain/Loss</th>
-            <th>Return %</th>
-          </tr>
-        </thead>
-        <tbody id="ie-tbody"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- ════ US EQUITY ════ -->
-<div class="page" id="page-useq">
-  <div class="ph">
-    <div class="ph-left"><h1>US Equity</h1><p id="us-sub">—</p></div>
-  </div>
-  <div class="tcard">
-    <div class="twrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Stock</th>
-            <th>Symbol</th>
-            <th>Units</th>
-            <th>Avg Price ($)</th>
-            <th>CMP ($)</th>
-            <th>Invested (₹)</th>
-            <th>Value (₹)</th>
-            <th>Gain/Loss (₹)</th>
-            <th>Return %</th>
-          </tr>
-        </thead>
-        <tbody id="us-tbody"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- Placeholder Views (To prevent Nav issues) -->
-<div class="page" id="page-fd"><div class="ph"><h1>Fixed Deposits</h1><p>Data View Active</p></div></div>
-<div class="page" id="page-wealthlite"><div class="ph"><h1>Wealth Elite MF</h1><p>Data View Active</p></div></div>
-<div class="page" id="page-personalmf"><div class="ph"><h1>Personal MF</h1><p>Data View Active</p></div></div>
-<div class="page" id="page-sgb"><div class="ph"><h1>SGB / Gold Bonds</h1><p>Data View Active</p></div></div>
-
-</main>
-
-<script>
-const VERCEL_API_URL = "https://your-project-name.vercel.app/api/get-prices";
-const USD_INR_RATE = 86.5;
-
-let portfolio = {
-  fd: JSON.parse(localStorage.getItem('port_fd')) || [],
-  wealthlite: JSON.parse(localStorage.getItem('port_wl')) || [],
-  personalmf: JSON.parse(localStorage.getItem('port_pmf')) || [],
-  indianeq: JSON.parse(localStorage.getItem('port_ie')) || [],
-  useq: JSON.parse(localStorage.getItem('port_us')) || [],
-  sgb: JSON.parse(localStorage.getItem('port_sgb')) || []
-};
-
-let colSettings = {
-  indianeq: { name: true, owner: true, symbol: true, exchange: true, quantity: true, avgPrice: true, cmp: true, invested: true, totalValue: true, totalGainLoss: true, returnPct: true, dailyGainLoss: true }
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  initLocalDataIfEmpty();
-  refreshSidebarCounts();
-  forceRenderActivePage();
-  
-  // Auto-refresh prices seamlessly
-  setTimeout(() => {
-    refreshAllLivePrices();
-  }, 500);
-});
-
-function initLocalDataIfEmpty() {
-  if (Object.values(portfolio).every(arr => arr.length === 0)) {
-    portfolio.indianeq = [
-      { id: "ie1", name: "Reliance Industries", owner: "Vignesh", symbol: "RELIANCE.NS", exchange: "NSE", quantity: 15, avgPrice: 2420, cmp: 2420, invested: 36300, totalValue: 36300, totalGainLoss: 0, returnPct: 0, dailyGainLoss: 0 },
-      { id: "ie2", name: "Tata Consultancy Services", owner: "Nandhini", symbol: "TCS.NS", exchange: "NSE", quantity: 8, avgPrice: 3850, cmp: 3850, invested: 30800, totalValue: 30800, totalGainLoss: 0, returnPct: 0, dailyGainLoss: 0 },
-      { id: "ie3", name: "HDFC Bank", owner: "Appa", symbol: "HDFCBANK.NS", exchange: "NSE", quantity: 20, avgPrice: 1550, cmp: 1550, invested: 31000, totalValue: 31000, totalGainLoss: 0, returnPct: 0, dailyGainLoss: 0 }
-    ];
-    portfolio.useq = [
-      { id: "us1", name: "Apple Inc.", symbol: "AAPL", exchange: "NASDAQ", quantity: 5, avgPrice: 175.0, cmp: 175.0, invested: 75687, totalValue: 75687, totalGainLoss: 0, returnPct: 0 }
-    ];
-    saveAllToStorage();
-  }
-}
-
-function saveAllToStorage() {
-  localStorage.setItem('port_fd', JSON.stringify(portfolio.fd));
-  localStorage.setItem('port_wl', JSON.stringify(portfolio.wealthlite));
-  localStorage.setItem('port_pmf', JSON.stringify(portfolio.personalmf));
-  localStorage.setItem('port_ie', JSON.stringify(portfolio.indianeq));
-  localStorage.setItem('port_us', JSON.stringify(portfolio.useq));
-  localStorage.setItem('port_sgb', JSON.stringify(portfolio.sgb));
-  refreshSidebarCounts();
-}
-
-function refreshSidebarCounts() {
-  document.getElementById('cnt-fd').innerText = portfolio.fd.length;
-  document.getElementById('cnt-wl').innerText = portfolio.wealthlite.length;
-  document.getElementById('cnt-pmf').innerText = portfolio.personalmf.length;
-  document.getElementById('cnt-ie').innerText = portfolio.indianeq.length;
-  document.getElementById('cnt-us').innerText = portfolio.useq.length;
-  document.getElementById('cnt-sgb').innerText = portfolio.sgb.length;
-}
-
-function gotoPage(pageId, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(`page-${pageId}`).classList.add('active');
-  if(btn) btn.classList.add('active');
-  forceRenderActivePage();
-}
-
-async function fetchPricesWithFallback(symbols) {
-  if (VERCEL_API_URL && !VERCEL_API_URL.includes("your-project-name")) {
-    try {
-      const cleanSymbols = encodeURIComponent(symbols.join(','));
-      const response = await fetch(`${VERCEL_API_URL}?symbols=${cleanSymbols}`);
-      if (response.ok) {
-        const json = await response.json();
-        if (json && json.success) return json.data;
+  <script>
+    // 1. Setup Portfolio Schemas dynamically mapping portfolio keys to section containers
+    const SECTION_SCHEMAS = {
+      'fd': {
+        container: 'table-fd',
+        title: 'Fixed Deposits',
+        color: 'var(--blue)',
+        headers: ['Bank/Issuer', 'Principal', 'Interest Rate', 'Maturity Value', 'Current Value'],
+        rowTemplate: (item) => `
+          <td><strong>${item.bank || item.name || 'Unknown FD'}</strong></td>
+          <td>₹${formatNum(item.invested || item.principal)}</td>
+          <td>${item.rate || 'N/A'}%</td>
+          <td>₹${formatNum(item.maturity || 0)}</td>
+          <td>₹${formatNum(item.current || item.invested)}</td>
+        `
+      },
+      'wealthlite': {
+        container: 'table-wl',
+        title: 'Wealthlite MF',
+        color: 'var(--purple)',
+        headers: ['Scheme Name', 'Units', 'Avg NAV', 'Invested', 'Current Value', 'Gain / Loss'],
+        rowTemplate: (item) => {
+          const inv = item.invested || 0;
+          const cur = item.current || 0;
+          const gain = cur - inv;
+          const gainPct = inv > 0 ? (gain / inv) * 100 : 0;
+          return `
+            <td><strong>${item.scheme || item.name}</strong></td>
+            <td>${item.units || '0'}</td>
+            <td>₹${formatNum(item.nav || 0)}</td>
+            <td>₹${formatNum(inv)}</td>
+            <td>₹${formatNum(cur)}</td>
+            <td class="${gain >= 0 ? 'up' : 'down'}">₹${formatNum(gain)} (${gainPct.toFixed(2)}%)</td>
+          `;
+        }
+      },
+      'personalmf': {
+        container: 'table-pmf',
+        title: 'Personal MF',
+        color: 'var(--teal)',
+        headers: ['Scheme Name', 'Units', 'Avg NAV', 'Invested', 'Current Value', 'Gain / Loss'],
+        rowTemplate: (item) => {
+          const inv = item.invested || 0;
+          const cur = item.current || 0;
+          const gain = cur - inv;
+          const gainPct = inv > 0 ? (gain / inv) * 100 : 0;
+          return `
+            <td><strong>${item.scheme || item.name}</strong></td>
+            <td>${item.units || '0'}</td>
+            <td>₹${formatNum(item.nav || 0)}</td>
+            <td>₹${formatNum(inv)}</td>
+            <td>₹${formatNum(cur)}</td>
+            <td class="${gain >= 0 ? 'up' : 'down'}">₹${formatNum(gain)} (${gainPct.toFixed(2)}%)</td>
+          `;
+        }
+      },
+      'indianeq': {
+        container: 'table-ie',
+        title: 'Indian Equity',
+        color: 'var(--green)',
+        headers: ['Stock Name', 'Qty', 'Avg Price', 'Invested', 'Current Value', 'Total Gain'],
+        rowTemplate: (item) => {
+          const qty = item.qty || item.quantity || 0;
+          const avg = item.avgPrice || item.avg_price || 0;
+          const curPrice = item.currentPrice || item.ltp || avg;
+          const inv = qty * avg;
+          const cur = qty * curPrice;
+          const gain = cur - inv;
+          const gainPct = inv > 0 ? (gain / inv) * 100 : 0;
+          return `
+            <td><strong>${item.name || item.ticker}</strong></td>
+            <td>${qty}</td>
+            <td>₹${formatNum(avg)}</td>
+            <td>₹${formatNum(inv)}</td>
+            <td>₹${formatNum(cur)}</td>
+            <td class="${gain >= 0 ? 'up' : 'down'}">₹${formatNum(gain)} (${gainPct.toFixed(2)}%)</td>
+          `;
+        }
+      },
+      'useq': {
+        container: 'table-us',
+        title: 'US Equity',
+        color: 'var(--gold)',
+        headers: ['Stock Name', 'Qty', 'Avg Price ($)', 'Invested (INR)', 'Current (INR)', 'Total Gain'],
+        rowTemplate: (item) => {
+          const qty = item.qty || item.quantity || 0;
+          const avg = item.avgPrice || item.avg_price || 0;
+          const curPrice = item.currentPrice || avg;
+          // In case items store both USD values and computed INR values
+          const inv = item.invested || (qty * avg * 83); 
+          const cur = item.current || (qty * curPrice * 83);
+          const gain = cur - inv;
+          const gainPct = inv > 0 ? (gain / inv) * 100 : 0;
+          return `
+            <td><strong>${item.name || item.ticker}</strong></td>
+            <td>${qty}</td>
+            <td>$${avg.toFixed(2)}</td>
+            <td>₹${formatNum(inv)}</td>
+            <td>₹${formatNum(cur)}</td>
+            <td class="${gain >= 0 ? 'up' : 'down'}">₹${formatNum(gain)} (${gainPct.toFixed(2)}%)</td>
+          `;
+        }
+      },
+      'sgb': {
+        container: 'table-sgb',
+        title: 'SGB / Gold',
+        color: 'var(--red)',
+        headers: ['Tranche / Gold Type', 'Units/Grams', 'Invested', 'Current Price', 'Current Value', 'Gain / Loss'],
+        rowTemplate: (item) => {
+          const units = item.units || item.grams || 0;
+          const inv = item.invested || 0;
+          const cur = item.current || (units * (item.currentPrice || 0));
+          const gain = cur - inv;
+          const gainPct = inv > 0 ? (gain / inv) * 100 : 0;
+          return `
+            <td><strong>${item.name || 'SGB / Gold'}</strong></td>
+            <td>${units}</td>
+            <td>₹${formatNum(inv)}</td>
+            <td>₹${formatNum(item.currentPrice || 0)}</td>
+            <td>₹${formatNum(cur)}</td>
+            <td class="${gain >= 0 ? 'up' : 'down'}">₹${formatNum(gain)} (${gainPct.toFixed(2)}%)</td>
+          `;
+        }
       }
-    } catch (e) {
-      console.warn("Vercel backend fetch failed, using direct mirror.", e);
+    };
+
+    // Helper: Safely parse array items
+    function getArray(data) {
+      if (!data) return [];
+      if (typeof data === 'string') {
+        try { return JSON.parse(data); } catch(e) { return []; }
+      }
+      return Array.isArray(data) ? data : [];
     }
-  }
 
-  try {
-    const targetSymbols = symbols.join(',');
-    const fallbackUrl = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(targetSymbols)}`;
-    const response = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(fallbackUrl)}`);
-    if (!response.ok) throw new Error("Proxy error");
-    
-    const payload = await response.json();
-    if (payload?.quoteResponse?.result) {
-      return payload.quoteResponse.result.map(stock => ({
-        symbol: stock.symbol,
-        price: stock.regularMarketPrice,
-        change: stock.regularMarketChange
-      }));
+    // Helper: Format currencies consistently
+    function formatNum(val) {
+      const num = parseFloat(val);
+      if (isNaN(num)) return '0.00';
+      return num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
-  } catch (err) {
-    console.error("All fetch paths failed.", err);
-  }
-  return null;
-}
 
-async function refreshAllLivePrices() {
-  const badge = document.getElementById('live-badge');
-  if (badge) {
-    badge.innerHTML = `<i class="fa fa-spinner fa-spin" style="margin-right:5px"></i>Refreshing prices…`;
-    badge.style.color = 'var(--gold)';
-  }
+    // 2. Fetch Portfolio Data Safely
+    function fetchPortfolio() {
+      return {
+        fd: getArray(localStorage.getItem('port_fd') || localStorage.getItem('fd') || '[]'),
+        wealthlite: getArray(localStorage.getItem('port_wl') || localStorage.getItem('wealthlite') || '[]'),
+        personalmf: getArray(localStorage.getItem('port_pmf') || localStorage.getItem('personalmf') || '[]'),
+        indianeq: getArray(localStorage.getItem('port_ie') || localStorage.getItem('indianeq') || '[]'),
+        useq: getArray(localStorage.getItem('port_us') || localStorage.getItem('useq') || '[]'),
+        sgb: getArray(localStorage.getItem('port_sgb') || localStorage.getItem('sgb') || '[]')
+      };
+    }
 
-  const ieSymbols = portfolio.indianeq.map(x => x.symbol).filter(Boolean);
-  const usSymbols = portfolio.useq.map(x => x.symbol).filter(Boolean);
-  const totalList = [...ieSymbols, ...usSymbols];
+    // 3. Process calculations for all sections
+    function calculateTotals(portfolio) {
+      let grandInv = 0;
+      let grandCur = 0;
+      const sectionTotals = {};
 
-  if(totalList.length === 0) {
-    if (badge) badge.innerHTML = `Live · Offline`;
-    return;
-  }
+      Object.keys(SECTION_SCHEMAS).forEach(key => {
+        const items = portfolio[key] || [];
+        let sectionInv = 0;
+        let sectionCur = 0;
 
-  try {
-    const data = await fetchPricesWithFallback(totalList);
-    if (data && data.length > 0) {
-      data.forEach(item => {
-        const ieItem = portfolio.indianeq.find(x => x.symbol.toUpperCase() === item.symbol.toUpperCase());
-        if(ieItem) {
-          ieItem.cmp = Number(item.price) || ieItem.avgPrice;
-          ieItem.totalValue = ieItem.quantity * ieItem.cmp;
-          ieItem.totalGainLoss = ieItem.totalValue - ieItem.invested;
-          ieItem.returnPct = ieItem.invested > 0 ? (ieItem.totalGainLoss / ieItem.invested) * 100 : 0;
-        }
-        const usItem = portfolio.useq.find(x => x.symbol.toUpperCase() === item.symbol.toUpperCase());
-        if(usItem) {
-          usItem.cmp = Number(item.price) || usItem.avgPrice;
-          usItem.totalValue = (usItem.quantity * usItem.cmp) * USD_INR_RATE;
-          usItem.totalGainLoss = usItem.totalValue - usItem.invested;
-          usItem.returnPct = usItem.invested > 0 ? (usItem.totalGainLoss / usItem.invested) * 100 : 0;
-        }
+        items.forEach(item => {
+          if (key === 'indianeq') {
+            const qty = item.qty || item.quantity || 0;
+            const avg = item.avgPrice || item.avg_price || 0;
+            const curPrice = item.currentPrice || item.ltp || avg;
+            sectionInv += qty * avg;
+            sectionCur += qty * curPrice;
+          } else if (key === 'useq') {
+            const qty = item.qty || item.quantity || 0;
+            const avg = item.avgPrice || item.avg_price || 0;
+            const curPrice = item.currentPrice || avg;
+            sectionInv += item.invested || (qty * avg * 83);
+            sectionCur += item.current || (qty * curPrice * 83);
+          } else if (key === 'fd') {
+            const inv = item.invested || item.principal || 0;
+            sectionInv += inv;
+            sectionCur += item.current || inv;
+          } else { // wealthlite, personalmf, sgb
+            const inv = item.invested || 0;
+            sectionInv += inv;
+            sectionCur += item.current || (item.units ? (item.units * (item.currentPrice || 0)) : inv);
+          }
+        });
+
+        sectionTotals[key] = { invested: sectionInv, current: sectionCur };
+        grandInv += sectionInv;
+        grandCur += sectionCur;
       });
-      saveAllToStorage();
-      if (badge) {
-        badge.innerHTML = `<i class="fa fa-circle" style="font-size:6px;margin-right:5px"></i>Live · Refreshed ${new Date().toLocaleTimeString()}`;
-        badge.style.color = 'var(--green)';
-      }
+
+      return { grandInv, grandCur, sectionTotals };
     }
-  } catch (err) {
-    if (badge) badge.innerHTML = `Live · Cached Dataset`;
-  } finally {
-    forceRenderActivePage();
-  }
-}
 
-function forceRenderActivePage() {
-  renderDashboard();
-  renderIndianEquity();
-  renderUSEquity();
-}
+    // 4. Update Header, Sidebar Counts, and Dashboard Cards
+    function renderApp() {
+      const portfolio = fetchPortfolio();
+      const totals = calculateTotals(portfolio);
 
-function renderDashboard() {
-  let ieVal = portfolio.indianeq.reduce((acc,x) => acc + x.totalValue, 0);
-  let usVal = portfolio.useq.reduce((acc,x) => acc + x.totalValue, 0);
-  let ieInv = portfolio.indianeq.reduce((acc,x) => acc + x.invested, 0);
-  let usInv = portfolio.useq.reduce((acc,x) => acc + x.invested, 0);
+      // A. Update Header global indicators
+      const netReturns = totals.grandCur - totals.grandInv;
+      document.getElementById('grand-inv').innerText = `₹${formatNum(totals.grandInv)}`;
+      document.getElementById('grand-cur').innerText = `₹${formatNum(totals.grandCur)}`;
+      const retEl = document.getElementById('grand-ret');
+      retEl.innerText = `₹${formatNum(netReturns)}`;
+      retEl.className = `total-val ${netReturns >= 0 ? 'up' : 'down'}`;
 
-  let grandInv = ieInv + usInv;
-  let grandVal = ieVal + usVal;
-  let grandGL = grandVal - grandInv;
-  let grandPct = grandInv > 0 ? (grandGL / grandInv) * 100 : 0;
+      // B. Update Sidebar Counts
+      document.getElementById('cnt-fd').innerText = portfolio.fd.length;
+      document.getElementById('cnt-wl').innerText = portfolio.wealthlite.length;
+      document.getElementById('cnt-pmf').innerText = portfolio.personalmf.length;
+      document.getElementById('cnt-ie').innerText = portfolio.indianeq.length;
+      document.getElementById('cnt-us').innerText = portfolio.useq.length;
+      document.getElementById('cnt-sgb').innerText = portfolio.sgb.length;
 
-  document.getElementById('sb-inv').innerText = `₹${formatNum(grandInv)}`;
-  document.getElementById('sb-val').innerText = `₹${formatNum(grandVal)}`;
-  document.getElementById('sb-ret').innerHTML = `<span style="color:${grandGL>=0?'var(--green)':'var(--red)'}">${grandPct.toFixed(1)}%</span>`;
+      // C. Render Dashboard Cards
+      const tilesContainer = document.getElementById('cat-tiles');
+      let cardsHTML = '';
+      
+      Object.keys(SECTION_SCHEMAS).forEach(key => {
+        const meta = SECTION_SCHEMAS[key];
+        const sec = totals.sectionTotals[key];
+        const count = portfolio[key].length;
+        const gain = sec.current - sec.invested;
+        const pct = sec.invested > 0 ? (gain / sec.invested) * 100 : 0;
 
-  document.getElementById('h-inv').innerText = `₹${formatNum(grandInv)}`;
-  document.getElementById('h-gl').innerText = `₹${formatNum(grandGL)}`;
-  document.getElementById('h-gl').style.color = grandGL >= 0 ? 'var(--green)' : 'var(--red)';
-  document.getElementById('h-ret').innerText = `${grandPct.toFixed(2)}%`;
-  document.getElementById('h-ret').style.color = grandGL >= 0 ? 'var(--green)' : 'var(--red)';
-  document.getElementById('dash-ts').innerText = `Updated: ${new Date().toLocaleTimeString()}`;
+        cardsHTML += `
+          <div class="sum-card" style="--c: ${meta.color}">
+            <div class="sum-label">${meta.title} (${count})</div>
+            <div class="sum-val">₹${formatNum(sec.current)}</div>
+            <div class="sum-sub">
+              <span>Inv: ₹${formatNum(sec.invested)}</span>
+              <span class="${gain >= 0 ? 'up' : 'down'}">${gain >= 0 ? '▲' : '▼'} ${pct.toFixed(1)}%</span>
+            </div>
+          </div>
+        `;
+      });
+      tilesContainer.innerHTML = cardsHTML;
 
-  const tiles = document.getElementById('cat-tiles');
-  tiles.innerHTML = `
-    <div class="sum-card" style="--c:var(--green)"><div class="sum-label">Indian Equity</div><div class="sum-val">₹${formatNum(ieVal)}</div></div>
-    <div class="sum-card" style="--c:var(--gold)"><div class="sum-label">US Equity</div><div class="sum-val">₹${formatNum(usVal)}</div></div>
-  `;
-}
+      // D. Render Individual Tables
+      Object.keys(SECTION_SCHEMAS).forEach(key => {
+        const meta = SECTION_SCHEMAS[key];
+        const items = portfolio[key];
+        const tableContainer = document.getElementById(meta.container);
+        
+        if (!tableContainer) return;
 
-function renderIndianEquity() {
-  let list = portfolio.indianeq;
-  const tbody = document.getElementById('ie-tbody');
-  tbody.innerHTML = '';
-  
-  list.forEach(item => {
-    let tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td><strong>${item.name}</strong></td>
-      <td>${item.owner}</td>
-      <td><span class="mono">${item.symbol}</span></td>
-      <td><span class="tag tag-nse">${item.exchange}</span></td>
-      <td class="mono">${item.quantity}</td>
-      <td class="mono">₹${formatNum(item.avgPrice)}</td>
-      <td class="mono">₹${formatNum(item.cmp)}</td>
-      <td class="mono">₹${formatNum(item.invested)}</td>
-      <td class="mono">₹${formatNum(item.totalValue)}</td>
-      <td class="mono" style="color:${item.totalGainLoss>=0?'var(--green)':'var(--red)'}">₹${formatNum(item.totalGainLoss)}</td>
-      <td><span class="pill ${item.totalGainLoss>=0?'g':'r'}">${item.returnPct.toFixed(2)}%</span></td>
-    `;
-    tbody.appendChild(tr);
-  });
-  let totalVal = list.reduce((acc,x) => acc + x.totalValue, 0);
-  document.getElementById('ie-sub').innerText = `Portfolio Net Value: ₹${formatNum(totalVal)}`;
-}
+        if (items.length === 0) {
+          tableContainer.innerHTML = `<div style="padding: 24px; color: var(--muted); text-align: center;">No assets tracked in this section.</div>`;
+          return;
+        }
 
-function renderUSEquity() {
-  let list = portfolio.useq;
-  const tbody = document.getElementById('us-tbody');
-  tbody.innerHTML = '';
-  
-  list.forEach(item => {
-    let tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td><strong>${item.name}</strong></td>
-      <td><span class="mono">${item.symbol}</span></td>
-      <td class="mono">${item.quantity}</td>
-      <td class="mono">$${item.avgPrice}</td>
-      <td class="mono">$${item.cmp}</td>
-      <td class="mono">₹${formatNum(item.invested)}</td>
-      <td class="mono">₹${formatNum(item.totalValue)}</td>
-      <td class="mono" style="color:${item.totalGainLoss>=0?'var(--green)':'var(--red)'}">₹${formatNum(item.totalGainLoss)}</td>
-      <td><span class="pill ${item.totalGainLoss>=0?'g':'r'}">${item.returnPct.toFixed(2)}%</span></td>
-    `;
-    tbody.appendChild(tr);
-  });
-  let totalVal = list.reduce((acc,x) => acc + x.totalValue, 0);
-  document.getElementById('us-sub').innerText = `Portfolio Net Value: ₹${formatNum(totalVal)}`;
-}
+        let tableHTML = `
+          <table>
+            <thead>
+              <tr>
+                ${meta.headers.map(h => `<th>${h}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${items.map(item => `<tr>${meta.rowTemplate(item)}</tr>`).join('')}
+            </tbody>
+          </table>
+        `;
+        tableContainer.innerHTML = tableHTML;
+      });
+    }
 
-function formatNum(num) {
-  return Number(num).toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-}
-</script>
+    // 5. Setup Sidebar Navigation Routing
+    document.querySelectorAll('.nav-links li').forEach(li => {
+      li.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active class from all links and add to clicked one
+        document.querySelectorAll('.nav-links li').forEach(el => el.classList.remove('active'));
+        li.classList.add('active');
+
+        // Hide all pages, show selected page
+        const targetPage = li.getAttribute('data-page');
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(targetPage).classList.add('active');
+
+        // Update header title based on active section
+        const pageTitle = li.querySelector('a').childNodes[0].textContent.trim();
+        document.getElementById('main-title').innerText = pageTitle === 'Dashboard' ? 'Dashboard Overview' : pageTitle;
+      });
+    });
+
+    // Run initial rendering
+    window.addEventListener('DOMContentLoaded', () => {
+      renderApp();
+      
+      // Auto-re-render if local storage changes
+      window.addEventListener('storage', renderApp);
+    });
+  </script>
 </body>
 </html>
