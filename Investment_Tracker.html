@@ -494,9 +494,10 @@ tbody td:first-child{text-align:left}
       <div class="search-box"><i class="fa fa-magnifying-glass"></i><input id="pmf-q" placeholder="Search fund name or code…" oninput="renderMF('personalmf')"></div>
       <select class="flt" id="pmf-owner-f" onchange="renderMF('personalmf')">
         <option value="">All Owners</option>
-        <option value="Vignesh">Vignesh</option>
+        <option value="Vigneshwaran">Vigneshwaran</option>
         <option value="Nandhini">Nandhini</option>
-	<option value="Appa">Appa</option>
+        <option value="Appa">Appa</option>
+        <option value="Family">Family</option>
       </select>
       <select class="flt" id="pmf-gl-f" onchange="renderMF('personalmf')">
         <option value="">All</option><option value="g">Gainers</option><option value="l">Losers</option>
@@ -561,8 +562,8 @@ tbody td:first-child{text-align:left}
       <div class="search-box"><i class="fa fa-magnifying-glass"></i><input id="ie-q" placeholder="Search name or symbol…" oninput="renderEq('indianeq')"></div>
       <select class="flt" id="ie-owner-f" onchange="renderEq('indianeq')">
         <option value="">All Owners</option>
-        <option value="Vignesh">Vignesh</option>
-	 <option value="Nandhini">Nandhini</option>
+        <option value="Vigneshwaran">Vigneshwaran</option>
+        <option value="Nandhini">Nandhini</option>
         <option value="Appa">Appa</option>
       </select>
       <select class="flt" id="ie-exch-f" onchange="renderEq('indianeq')">
@@ -783,24 +784,24 @@ const DEFAULTS = {
     {bank:"Others in IDFC",fdNumber:57789,invested:77000,rate:6,startDate:"2026-05-01",maturityDate:"2027-05-01",maturityValue:78000,status:"Active",totalValue:77607.56,totalGainLoss:607.56,dailyGainLoss:12.66,returnPct:0.79}
   ],
   wealthlite:[
-    {name:"Bandhan Multi Factor Fund",schemeCode:153721,owner:"Mahesh",units:4940.1,purchaseNAV:10.1207,invested:49997.5,currentNAV:9.846,totalValue:48640.22,totalGainLoss:-1357.28,returnPct:-2.71,dailyGainLoss:0},
-    {name:"ICICI Prudential Business Cycle Fund-Growth",schemeCode:148653,owner:"Mahesh",units:19036.45,purchaseNAV:22.0881,invested:420479.07,currentNAV:24.8,totalValue:472103.96,totalGainLoss:51624.89,returnPct:12.28,dailyGainLoss:0},
-    {name:"ICICI Prudential Manufacturing Fund-Growth",schemeCode:145077,owner:"Mahesh",units:4126.52,purchaseNAV:34.6522,invested:142992.85,currentNAV:38.47,totalValue:158747.22,totalGainLoss:15754.37,returnPct:11.02,dailyGainLoss:0},
-    {name:"Invesco India Mid cap fund",schemeCode:105503,owner:"Mahesh",units:489.72,purchaseNAV:178.6647,invested:87495.66,currentNAV:190.35,totalValue:93218.20,totalGainLoss:5722.54,returnPct:6.54,dailyGainLoss:0},
-    {name:"Nippon India Power and Infra Fund Growth (SIP)",schemeCode:101262,owner:"Mahesh",units:414.72,purchaseNAV:344.7904,invested:142992.85,currentNAV:385.256,totalValue:159773.37,totalGainLoss:16780.52,returnPct:11.74,dailyGainLoss:0},
-    {name:"Nippon India Small Cap Fund Growth (SIP)",schemeCode:113177,owner:"Mahesh",units:2345.55,purchaseNAV:155.0732,invested:363731.86,currentNAV:177.8023,totalValue:417044.18,totalGainLoss:53312.32,returnPct:14.66,dailyGainLoss:0},
-    {name:"Quant Mid Cap Fund Growth",schemeCode:101065,owner:"Mahesh",units:1574.5,purchaseNAV:210.0566,invested:330734.12,currentNAV:217.5613,totalValue:342550.27,totalGainLoss:11816.15,returnPct:3.57,dailyGainLoss:32159.16},
-    {name:"SBI Large & Midcap-Direct-Div",schemeCode:103024,owner:"Mahesh",units:602.94,purchaseNAV:563.8781,invested:339983,currentNAV:637.968,totalValue:384656.43,totalGainLoss:44673.43,returnPct:13.14,dailyGainLoss:0},
-    {name:"Tata Banking and Financial Services Fund Growth (SIP)",schemeCode:135794,owner:"Mahesh",units:1322.94,purchaseNAV:38.5487,invested:50997.62,currentNAV:43.4424,totalValue:57471.69,totalGainLoss:6474.07,returnPct:12.69,dailyGainLoss:0},
-    {name:"Tata Digital India Fund Growth (SIP)",schemeCode:135797,owner:"Mahesh",units:1932.58,purchaseNAV:43.9807,invested:84995.92,currentNAV:39.589,totalValue:76508.91,totalGainLoss:-8487.01,returnPct:-9.99,dailyGainLoss:0},
-    {name:"Tata India Consumer Fund Growth",schemeCode:135804,owner:"Mahesh",units:3102.84,purchaseNAV:42.3785,invested:131493.69,currentNAV:45.2734,totalValue:140476.12,totalGainLoss:8982.43,returnPct:6.83,dailyGainLoss:0},
-    {name:"Tata India Pharma and Healthcare Fund Growth",schemeCode:135812,owner:"Mahesh",units:4578.45,purchaseNAV:28.7201,invested:131493.69,currentNAV:31.3957,totalValue:143743.64,totalGainLoss:12249.95,returnPct:9.32,dailyGainLoss:0},
-    {name:"Tata Resources and Energy Fund Growth (SIP)",schemeCode:135815,owner:"Mahesh",units:1234.77,purchaseNAV:41.3013,invested:50997.62,currentNAV:49.0918,totalValue:60617.08,totalGainLoss:9619.46,returnPct:18.86,dailyGainLoss:0},
-    {name:"ICICI Prudential Manufacturing Fund-Growth",schemeCode:145077,owner:"Mahesh",units:6192.62,purchaseNAV:32,invested:198163.84,currentNAV:38.47,totalValue:238230.09,totalGainLoss:40066.25,returnPct:20.22,dailyGainLoss:0},
-    {name:"Mahindra Manulife Mid Cap Fund - Regular Plan - Growth",schemeCode:142109,owner:"Mahesh",units:3526.92,purchaseNAV:32.2499,invested:113742.82,currentNAV:36.3429,totalValue:128178.5,totalGainLoss:14435.68,returnPct:12.69,dailyGainLoss:8402.53},
-    {name:"Nippon India Multi Asset Allocation Fund - Regular - Growth",schemeCode:148459,owner:"Mahesh",units:7890.2,purchaseNAV:24.0793,invested:189990.49,currentNAV:24.683,totalValue:194753.81,totalGainLoss:4763.31,returnPct:2.51,dailyGainLoss:2.37},
-    {name:"Quant Flexi Cap Fund-Regular Plan-Growth Option",schemeCode:109830,owner:"Mahesh",units:2221.42,purchaseNAV:86.7446,invested:192696.19,currentNAV:106.8279,totalValue:237309.63,totalGainLoss:44613.44,returnPct:23.15,dailyGainLoss:21266.32},
-    {name:"Tata Infrastructure Fund Growth (SIP)",schemeCode:101766,owner:"Mahesh",units:313.66,purchaseNAV:162.5904,invested:50997.62,currentNAV:182.3857,totalValue:57207.10,totalGainLoss:6209.48,returnPct:12.18,dailyGainLoss:0}
+    {name:"Bandhan Multi Factor Fund",schemeCode:153721,owner:"Vigneshwaran",units:4940.1,purchaseNAV:10.1207,invested:49997.5,currentNAV:9.846,totalValue:48640.22,totalGainLoss:-1357.28,returnPct:-2.71,dailyGainLoss:0},
+    {name:"ICICI Prudential Business Cycle Fund-Growth",schemeCode:148653,owner:"Vigneshwaran",units:19036.45,purchaseNAV:22.0881,invested:420479.07,currentNAV:24.8,totalValue:472103.96,totalGainLoss:51624.89,returnPct:12.28,dailyGainLoss:0},
+    {name:"ICICI Prudential Manufacturing Fund-Growth",schemeCode:145077,owner:"Vigneshwaran",units:4126.52,purchaseNAV:34.6522,invested:142992.85,currentNAV:38.47,totalValue:158747.22,totalGainLoss:15754.37,returnPct:11.02,dailyGainLoss:0},
+    {name:"Invesco India Mid cap fund",schemeCode:105503,owner:"Vigneshwaran",units:489.72,purchaseNAV:178.6647,invested:87495.66,currentNAV:190.35,totalValue:93218.20,totalGainLoss:5722.54,returnPct:6.54,dailyGainLoss:0},
+    {name:"Nippon India Power and Infra Fund Growth (SIP)",schemeCode:101262,owner:"Vigneshwaran",units:414.72,purchaseNAV:344.7904,invested:142992.85,currentNAV:385.256,totalValue:159773.37,totalGainLoss:16780.52,returnPct:11.74,dailyGainLoss:0},
+    {name:"Nippon India Small Cap Fund Growth (SIP)",schemeCode:113177,owner:"Vigneshwaran",units:2345.55,purchaseNAV:155.0732,invested:363731.86,currentNAV:177.8023,totalValue:417044.18,totalGainLoss:53312.32,returnPct:14.66,dailyGainLoss:0},
+    {name:"Quant Mid Cap Fund Growth",schemeCode:101065,owner:"Vigneshwaran",units:1574.5,purchaseNAV:210.0566,invested:330734.12,currentNAV:217.5613,totalValue:342550.27,totalGainLoss:11816.15,returnPct:3.57,dailyGainLoss:32159.16},
+    {name:"SBI Large & Midcap-Direct-Div",schemeCode:103024,owner:"Vigneshwaran",units:602.94,purchaseNAV:563.8781,invested:339983,currentNAV:637.968,totalValue:384656.43,totalGainLoss:44673.43,returnPct:13.14,dailyGainLoss:0},
+    {name:"Tata Banking and Financial Services Fund Growth (SIP)",schemeCode:135794,owner:"Vigneshwaran",units:1322.94,purchaseNAV:38.5487,invested:50997.62,currentNAV:43.4424,totalValue:57471.69,totalGainLoss:6474.07,returnPct:12.69,dailyGainLoss:0},
+    {name:"Tata Digital India Fund Growth (SIP)",schemeCode:135797,owner:"Vigneshwaran",units:1932.58,purchaseNAV:43.9807,invested:84995.92,currentNAV:39.589,totalValue:76508.91,totalGainLoss:-8487.01,returnPct:-9.99,dailyGainLoss:0},
+    {name:"Tata India Consumer Fund Growth",schemeCode:135804,owner:"Vigneshwaran",units:3102.84,purchaseNAV:42.3785,invested:131493.69,currentNAV:45.2734,totalValue:140476.12,totalGainLoss:8982.43,returnPct:6.83,dailyGainLoss:0},
+    {name:"Tata India Pharma and Healthcare Fund Growth",schemeCode:135812,owner:"Vigneshwaran",units:4578.45,purchaseNAV:28.7201,invested:131493.69,currentNAV:31.3957,totalValue:143743.64,totalGainLoss:12249.95,returnPct:9.32,dailyGainLoss:0},
+    {name:"Tata Resources and Energy Fund Growth (SIP)",schemeCode:135815,owner:"Vigneshwaran",units:1234.77,purchaseNAV:41.3013,invested:50997.62,currentNAV:49.0918,totalValue:60617.08,totalGainLoss:9619.46,returnPct:18.86,dailyGainLoss:0},
+    {name:"ICICI Prudential Manufacturing Fund-Growth",schemeCode:145077,owner:"Vigneshwaran",units:6192.62,purchaseNAV:32,invested:198163.84,currentNAV:38.47,totalValue:238230.09,totalGainLoss:40066.25,returnPct:20.22,dailyGainLoss:0},
+    {name:"Mahindra Manulife Mid Cap Fund - Regular Plan - Growth",schemeCode:142109,owner:"Vigneshwaran",units:3526.92,purchaseNAV:32.2499,invested:113742.82,currentNAV:36.3429,totalValue:128178.5,totalGainLoss:14435.68,returnPct:12.69,dailyGainLoss:8402.53},
+    {name:"Nippon India Multi Asset Allocation Fund - Regular - Growth",schemeCode:148459,owner:"Vigneshwaran",units:7890.2,purchaseNAV:24.0793,invested:189990.49,currentNAV:24.683,totalValue:194753.81,totalGainLoss:4763.31,returnPct:2.51,dailyGainLoss:2.37},
+    {name:"Quant Flexi Cap Fund-Regular Plan-Growth Option",schemeCode:109830,owner:"Vigneshwaran",units:2221.42,purchaseNAV:86.7446,invested:192696.19,currentNAV:106.8279,totalValue:237309.63,totalGainLoss:44613.44,returnPct:23.15,dailyGainLoss:21266.32},
+    {name:"Tata Infrastructure Fund Growth (SIP)",schemeCode:101766,owner:"Vigneshwaran",units:313.66,purchaseNAV:162.5904,invested:50997.62,currentNAV:182.3857,totalValue:57207.10,totalGainLoss:6209.48,returnPct:12.18,dailyGainLoss:0}
   ],
   personalmf:[
     {name:"DSP ELSS Tax Saver Fund",schemeCode:119242,owner:"Family",units:187.909,purchaseNAV:143.95,invested:27049.50,currentNAV:154.667,totalValue:29063.32,totalGainLoss:2013.82,returnPct:7.44,dailyGainLoss:0},
@@ -821,41 +822,41 @@ const DEFAULTS = {
     {name:"Tata Digital Fund",schemeCode:135800,owner:"Family",units:615.466,purchaseNAV:45.49,invested:27998.61,currentNAV:46.6426,totalValue:28706.93,totalGainLoss:708.32,returnPct:2.53,dailyGainLoss:0}
   ],
   indianeq:[
-    {name:"AMARA RAJA",owner:"Vignesh",symbol:"ARE&M.BO",exchange:"BSE",units:15,avgPrice:722.27,invested:10834.05,currentPrice:722.27,totalValue:10834.05,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"FEDERAL BANK",owner:"Vignesh",symbol:"FEDERALBNK.NS",exchange:"NSE",units:45,avgPrice:114.15,invested:5136.75,currentPrice:114.15,totalValue:5136.75,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"IDFC FIRST BANK",owner:"Vignesh",symbol:"IDFCFIRSTB.NS",exchange:"NSE",units:95,avgPrice:64.54,invested:6130.88,currentPrice:64.54,totalValue:6131.30,totalGainLoss:0.42,returnPct:0.01,dailyGainLoss:0},
-    {name:"ITC LIMITED",owner:"Vignesh",symbol:"ITC.NS",exchange:"NSE",units:30,avgPrice:214.21,invested:6426.30,currentPrice:214.21,totalValue:6426.30,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"MANAPPURAM FINANCE",owner:"Vignesh",symbol:"MANAPPURAM.NS",exchange:"NSE",units:20,avgPrice:199.65,invested:3993.00,currentPrice:199.65,totalValue:3993.00,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"NATCO PHARMA",owner:"Vignesh",symbol:"NATCOPHARM.NS",exchange:"NSE",units:20,avgPrice:858.48,invested:17169.60,currentPrice:858.48,totalValue:17169.60,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"SOUTH INDIAN BANK",owner:"Vignesh",symbol:"SOUTHBANK.NS",exchange:"BSE",units:400,avgPrice:27.90,invested:11162.46,currentPrice:27.90,totalValue:11160.00,totalGainLoss:-2.46,returnPct:-0.02,dailyGainLoss:0},
-    {name:"TATA POWER",owner:"Vignesh",symbol:"TATAPOWER.NS",exchange:"NSE",units:20,avgPrice:137.10,invested:2742.00,currentPrice:137.10,totalValue:2742.00,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"TATA STEEL LIMITED",owner:"Vignesh",symbol:"TATASTEEL.NS",exchange:"NSE",units:55,avgPrice:125.01,invested:6875.55,currentPrice:125.01,totalValue:6875.55,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"ZYDUS LIFESCIENCES LIMITED",owner:"Vignesh",symbol:"ZYDUSLIFE.NS",exchange:"NSE",units:8,avgPrice:7673.84,invested:6190.75,currentPrice:7673.84,totalValue:61390.72,totalGainLoss:55199.97,returnPct:891.65,dailyGainLoss:0},
+    {name:"AMARA RAJA",owner:"Vigneshwaran",symbol:"ARE&M.BO",exchange:"BSE",units:15,avgPrice:722.27,invested:10834.05,currentPrice:722.27,totalValue:10834.05,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"FEDERAL BANK",owner:"Vigneshwaran",symbol:"FEDERALBNK.NS",exchange:"NSE",units:45,avgPrice:114.15,invested:5136.75,currentPrice:114.15,totalValue:5136.75,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"IDFC FIRST BANK",owner:"Vigneshwaran",symbol:"IDFCFIRSTB.NS",exchange:"NSE",units:95,avgPrice:64.54,invested:6130.88,currentPrice:64.54,totalValue:6131.30,totalGainLoss:0.42,returnPct:0.01,dailyGainLoss:0},
+    {name:"ITC LIMITED",owner:"Vigneshwaran",symbol:"ITC.NS",exchange:"NSE",units:30,avgPrice:214.21,invested:6426.30,currentPrice:214.21,totalValue:6426.30,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"MANAPPURAM FINANCE",owner:"Vigneshwaran",symbol:"MANAPPURAM.NS",exchange:"NSE",units:20,avgPrice:199.65,invested:3993.00,currentPrice:199.65,totalValue:3993.00,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"NATCO PHARMA",owner:"Vigneshwaran",symbol:"NATCOPHARM.NS",exchange:"NSE",units:20,avgPrice:858.48,invested:17169.60,currentPrice:858.48,totalValue:17169.60,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"SOUTH INDIAN BANK",owner:"Vigneshwaran",symbol:"SOUTHBANK.NS",exchange:"BSE",units:400,avgPrice:27.90,invested:11162.46,currentPrice:27.90,totalValue:11160.00,totalGainLoss:-2.46,returnPct:-0.02,dailyGainLoss:0},
+    {name:"TATA POWER",owner:"Vigneshwaran",symbol:"TATAPOWER.NS",exchange:"NSE",units:20,avgPrice:137.10,invested:2742.00,currentPrice:137.10,totalValue:2742.00,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"TATA STEEL LIMITED",owner:"Vigneshwaran",symbol:"TATASTEEL.NS",exchange:"NSE",units:55,avgPrice:125.01,invested:6875.55,currentPrice:125.01,totalValue:6875.55,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"ZYDUS LIFESCIENCES LIMITED",owner:"Vigneshwaran",symbol:"ZYDUSLIFE.NS",exchange:"NSE",units:8,avgPrice:767.38,invested:6139.04,currentPrice:7673.84,totalValue:61390.72,totalGainLoss:55251.68,returnPct:900.0,dailyGainLoss:0},
     {name:"AMARA RAJA",owner:"Appa",symbol:"ARE&M.BO",exchange:"NSE",units:11,avgPrice:817.02,invested:8987.25,currentPrice:817.02,totalValue:8987.22,totalGainLoss:-0.03,returnPct:0,dailyGainLoss:0},
-    {name:"ITC LIMITED",owner:"",symbol:"ITC.NS",exchange:"NSE",units:1,avgPrice:346.70,invested:346.70,currentPrice:346.70,totalValue:346.70,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"MANAPPURAM FINANCE",owner:"",symbol:"MANAPPURAM.NS",exchange:"NSE",units:35,avgPrice:304.20,invested:5634.75,currentPrice:304.20,totalValue:10647.00,totalGainLoss:5012.25,returnPct:88.95,dailyGainLoss:0},
-    {name:"Nippon India Nifty Pharma ETF",owner:"",symbol:"PHARMABEES.NS",exchange:"NSE",units:103,avgPrice:15.64,invested:1610.85,currentPrice:15.64,totalValue:1610.92,totalGainLoss:0.07,returnPct:0,dailyGainLoss:0},
-    {name:"SOUTH INDIAN BANK",owner:"",symbol:"SOUTHBANK.NS",exchange:"NSE",units:179,avgPrice:25.63,invested:4587.45,currentPrice:25.63,totalValue:4587.77,totalGainLoss:0.32,returnPct:0.01,dailyGainLoss:0},
-    {name:"AMARA RAJA",owner:"",symbol:"ARE&M.BO",exchange:"NSE",units:8,avgPrice:835.94,invested:6687.50,currentPrice:835.94,totalValue:6687.52,totalGainLoss:0.02,returnPct:0,dailyGainLoss:0},
+    {name:"ITC LIMITED",owner:"Vigneshwaran",symbol:"ITC.NS",exchange:"NSE",units:1,avgPrice:346.70,invested:346.70,currentPrice:346.70,totalValue:346.70,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"MANAPPURAM FINANCE",owner:"Vigneshwaran",symbol:"MANAPPURAM.NS",exchange:"NSE",units:35,avgPrice:161.00,invested:5634.75,currentPrice:304.20,totalValue:10647.00,totalGainLoss:5012.25,returnPct:88.95,dailyGainLoss:0},
+    {name:"Nippon India Nifty Pharma ETF",owner:"Vigneshwaran",symbol:"PHARMABEES.NS",exchange:"NSE",units:103,avgPrice:15.64,invested:1610.85,currentPrice:15.64,totalValue:1610.92,totalGainLoss:0.07,returnPct:0,dailyGainLoss:0},
+    {name:"SOUTH INDIAN BANK",owner:"Vigneshwaran",symbol:"SOUTHBANK.NS",exchange:"NSE",units:179,avgPrice:25.63,invested:4587.45,currentPrice:25.63,totalValue:4587.77,totalGainLoss:0.32,returnPct:0.01,dailyGainLoss:0},
+    {name:"AMARA RAJA",owner:"Vigneshwaran",symbol:"ARE&M.BO",exchange:"NSE",units:8,avgPrice:835.94,invested:6687.50,currentPrice:835.94,totalValue:6687.52,totalGainLoss:0.02,returnPct:0,dailyGainLoss:0},
     {name:"ICICI Pru Nifty FMCG ETF",owner:"Appa",symbol:"FMCGIETF.NS",exchange:"NSE",units:120,avgPrice:53.92,invested:6470.24,currentPrice:53.92,totalValue:6470.40,totalGainLoss:0.16,returnPct:0,dailyGainLoss:0},
-    {name:"Nippon India ETF Gold BeES",owner:"",symbol:"GOLDBEES.NS",exchange:"NSE",units:12,avgPrice:126.97,invested:1509.94,currentPrice:126.97,totalValue:1523.64,totalGainLoss:13.70,returnPct:0.91,dailyGainLoss:0},
+    {name:"Nippon India ETF Gold BeES",owner:"Vigneshwaran",symbol:"GOLDBEES.NS",exchange:"NSE",units:12,avgPrice:125.82,invested:1509.94,currentPrice:126.97,totalValue:1523.64,totalGainLoss:13.70,returnPct:0.91,dailyGainLoss:0},
     {name:"Nippon India ETF Nifty IT",owner:"Appa",symbol:"ITBEES.NS",exchange:"NSE",units:144,avgPrice:38.21,invested:5501.64,currentPrice:38.21,totalValue:5502.24,totalGainLoss:0.60,returnPct:0.01,dailyGainLoss:0},
     {name:"ITC LIMITED",owner:"Appa",symbol:"ITC.NS",exchange:"NSE",units:20,avgPrice:334.84,invested:6696.85,currentPrice:334.84,totalValue:6696.80,totalGainLoss:-0.05,returnPct:0,dailyGainLoss:0},
     {name:"NATCO PHARMA LIMITED",owner:"Appa",symbol:"NATCOPHARM.NS",exchange:"NSE",units:8,avgPrice:852.78,invested:6822.25,currentPrice:852.78,totalValue:6822.24,totalGainLoss:-0.01,returnPct:0,dailyGainLoss:0},
     {name:"REC LIMITED",owner:"Appa",symbol:"RECLTD.bo",exchange:"BSE",units:15,avgPrice:369.87,invested:5548.00,currentPrice:369.87,totalValue:5548.05,totalGainLoss:0.05,returnPct:0,dailyGainLoss:0},
-    {name:"TMPV",owner:"Vignesh",symbol:"TMPV.NS",exchange:"NSE",units:62,avgPrice:352.21,invested:21837.07,currentPrice:352.21,totalValue:21837.02,totalGainLoss:-0.05,returnPct:0,dailyGainLoss:0},
-    {name:"TMCV",owner:"Vignesh",symbol:"TMCV.BO",exchange:"BSE",units:49,avgPrice:356.33,invested:17460.28,currentPrice:356.33,totalValue:17460.17,totalGainLoss:-0.11,returnPct:0,dailyGainLoss:0},
-    {name:"TMCV",owner:"",symbol:"TMCV.BO",exchange:"BSE",units:14,avgPrice:190.42,invested:2666.00,currentPrice:190.42,totalValue:2665.88,totalGainLoss:-0.12,returnPct:0,dailyGainLoss:0},
-    {name:"TMPV",owner:"",symbol:"TMPV.BO",exchange:"BSE",units:14,avgPrice:420.88,invested:5892.00,currentPrice:420.88,totalValue:5892.32,totalGainLoss:0.32,returnPct:0.01,dailyGainLoss:0},
-    {name:"TCS",owner:"Vignesh",symbol:"TCS.NS",exchange:"NSE",units:3,avgPrice:2540.40,invested:7621.20,currentPrice:2540.40,totalValue:7621.20,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
-    {name:"Movalue",owner:"",symbol:"MOVALUE.NS",exchange:"NSE",units:2,avgPrice:127.80,invested:255.60,currentPrice:127.80,totalValue:255.60,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"TMPV",owner:"Vigneshwaran",symbol:"TMPV.NS",exchange:"NSE",units:62,avgPrice:352.21,invested:21837.07,currentPrice:352.21,totalValue:21837.02,totalGainLoss:-0.05,returnPct:0,dailyGainLoss:0},
+    {name:"TMCV",owner:"Vigneshwaran",symbol:"TMCV.BO",exchange:"BSE",units:49,avgPrice:356.33,invested:17460.28,currentPrice:356.33,totalValue:17460.17,totalGainLoss:-0.11,returnPct:0,dailyGainLoss:0},
+    {name:"TMCV",owner:"Vigneshwaran",symbol:"TMCV.BO",exchange:"BSE",units:14,avgPrice:190.42,invested:2666.00,currentPrice:190.42,totalValue:2665.88,totalGainLoss:-0.12,returnPct:0,dailyGainLoss:0},
+    {name:"TMPV",owner:"Vigneshwaran",symbol:"TMPV.BO",exchange:"BSE",units:14,avgPrice:420.88,invested:5892.00,currentPrice:420.88,totalValue:5892.32,totalGainLoss:0.32,returnPct:0.01,dailyGainLoss:0},
+    {name:"TCS",owner:"Vigneshwaran",symbol:"TCS.NS",exchange:"NSE",units:3,avgPrice:2540.40,invested:7621.20,currentPrice:2540.40,totalValue:7621.20,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"Movalue",owner:"Vigneshwaran",symbol:"MOVALUE.NS",exchange:"NSE",units:2,avgPrice:127.80,invested:255.60,currentPrice:127.80,totalValue:255.60,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
     {name:"MOREALTY",owner:"Appa",symbol:"MOREALTY.NS",exchange:"NSE",units:11,avgPrice:71.72,invested:788.95,currentPrice:71.72,totalValue:788.92,totalGainLoss:-0.03,returnPct:0,dailyGainLoss:0},
     {name:"MOVALUE",owner:"Appa",symbol:"MOVALUE.NS",exchange:"NSE",units:27,avgPrice:115.72,invested:2124.33,currentPrice:115.72,totalValue:3124.44,totalGainLoss:1000.11,returnPct:47.08,dailyGainLoss:0},
-    {name:"Infosys",owner:"Vignesh",symbol:"Infy.NS",exchange:"NSE",units:3,avgPrice:1275.82,invested:3827.45,currentPrice:1275.82,totalValue:3827.46,totalGainLoss:0.01,returnPct:0,dailyGainLoss:0},
-    {name:"INDUSINDBK",owner:"Vignesh",symbol:"INDUSINDBK.NS",exchange:"NSE",units:3,avgPrice:796.33,invested:2389.00,currentPrice:796.33,totalValue:2388.99,totalGainLoss:-0.01,returnPct:0,dailyGainLoss:0},
-    {name:"HDFC Bank",owner:"Vignesh",symbol:"HDFCBANK.NS",exchange:"NSE",units:6,avgPrice:758.51,invested:4551.10,currentPrice:758.51,totalValue:4551.06,totalGainLoss:-0.04,returnPct:0,dailyGainLoss:0},
-    {name:"JYOTHYLAB",owner:"Vignesh",symbol:"JYOTHYLAB.NS",exchange:"NSE",units:18,avgPrice:209.57,invested:3772.40,currentPrice:209.57,totalValue:3772.26,totalGainLoss:-0.14,returnPct:0,dailyGainLoss:0},
-    {name:"Cipla",owner:"Vignesh",symbol:"CIPLA.NS",exchange:"NSE",units:1,avgPrice:1229.80,invested:1229.80,currentPrice:1229.80,totalValue:1229.80,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
+    {name:"Infosys",owner:"Vigneshwaran",symbol:"Infy.NS",exchange:"NSE",units:3,avgPrice:1275.82,invested:3827.45,currentPrice:1275.82,totalValue:3827.46,totalGainLoss:0.01,returnPct:0,dailyGainLoss:0},
+    {name:"INDUSINDBK",owner:"Vigneshwaran",symbol:"INDUSINDBK.NS",exchange:"NSE",units:3,avgPrice:796.33,invested:2389.00,currentPrice:796.33,totalValue:2388.99,totalGainLoss:-0.01,returnPct:0,dailyGainLoss:0},
+    {name:"HDFC Bank",owner:"Vigneshwaran",symbol:"HDFCBANK.NS",exchange:"NSE",units:6,avgPrice:758.51,invested:4551.10,currentPrice:758.51,totalValue:4551.06,totalGainLoss:-0.04,returnPct:0,dailyGainLoss:0},
+    {name:"JYOTHYLAB",owner:"Vigneshwaran",symbol:"JYOTHYLAB.NS",exchange:"NSE",units:18,avgPrice:209.57,invested:3772.40,currentPrice:209.57,totalValue:3772.26,totalGainLoss:-0.14,returnPct:0,dailyGainLoss:0},
+    {name:"Cipla",owner:"Vigneshwaran",symbol:"CIPLA.NS",exchange:"NSE",units:1,avgPrice:1229.80,invested:1229.80,currentPrice:1229.80,totalValue:1229.80,totalGainLoss:0,returnPct:0,dailyGainLoss:0},
     {name:"Cipla",owner:"Appa",symbol:"CIPLA.NS",exchange:"NSE",units:3,avgPrice:1203.32,invested:3609.95,currentPrice:1203.32,totalValue:3609.96,totalGainLoss:0.01,returnPct:0,dailyGainLoss:0},
     {name:"HDFC Bank",owner:"Appa",symbol:"HDFC.BO",exchange:"BSE",units:2,avgPrice:772.90,invested:1545.80,currentPrice:772.90,totalValue:1545.80,totalGainLoss:0,returnPct:0,dailyGainLoss:0}
   ],
@@ -928,23 +929,9 @@ function applyColumnVisibility(ds){
 function initColumnPickers(){['fd','wealthlite','personalmf','indianeq','useq','sgb'].forEach(ds=>{renderColumnPicker(ds);applyColumnVisibility(ds);});}
 
 // ══ LIVE DATA ENGINE ══
-// ─── WHY NO PROXIES ────────────────────────────────────────────────────────
-// Every free CORS proxy blocks requests that come with Origin: null — which is
-// exactly what the browser sends when you open a local HTML file (file:// URLs).
-// No matter how many proxies we try, they all reject null origins for security.
-//
-// SOLUTION: use data sources that send Access-Control-Allow-Origin: * directly:
-//  • mfapi.in  — for Mutual Fund NAVs (AMFI-sourced, updated after market close)
-//  • stooq.com — for Indian & US equities (proper CORS headers, no proxy needed)
-//  • frankfurter.app — for USD/INR rate (free, open, CORS-enabled)
-// ───────────────────────────────────────────────────────────────────────────
-
 let liveBusy=false,lastLiveUpdate=null;
 let usdInrRate=(function(){try{const v=+localStorage.getItem('folio_usdinr_rate');return v>0?v:88.5;}catch{return 88.5;}})();
 const ALPHA_VANTAGE_KEY='demo';
-// thingproxy.freeboard.io is discontinued (DNS no longer resolves) and allorigins is flaky,
-// so codetabs and cors.x2u.in are tried first as more reliable current options, with
-// allorigins kept as a last-ditch extra attempt.
 const CORS_PROXY_BUILDERS=[
   url=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
   url=>`https://cors.x2u.in/${url}`,
@@ -959,11 +946,6 @@ async function fetchTimeout(url,ms=10000){
   const ctrl=new AbortController();
   const t=setTimeout(()=>ctrl.abort(),ms);
   try{
-    // Try the direct request first — mfapi.in and frankfurter.app send
-    // Access-Control-Allow-Origin: * and work fine even from a file:// page.
-    // Stooq and Yahoo Finance do NOT allow browser cross-origin requests, so
-    // for those (and any other source that fails direct) we fall back to
-    // public CORS proxies below.
     try{
       const res=await fetch(url,{signal:ctrl.signal});
       if(res.ok) return res;
@@ -985,15 +967,11 @@ async function fetchTimeout(url,ms=10000){
   }finally{clearTimeout(t);}
 }
 
-// Convert portfolio symbols into a format that public quote endpoints can resolve.
-// Indian shares use .NS/.BO, U.S. tickers use .US, and special characters such as '&' are stripped.
 function toQuoteSymbol(raw){
   const s=String(raw||'').trim();
   if(!s)return null;
-
   const cleaned=s.replace(/[^A-Z0-9.&-]/gi,'');
   if(!cleaned)return null;
-
   const upper=cleaned.toUpperCase();
   if(upper.endsWith('.NS')||upper.endsWith('.BO')||upper.endsWith('.IN')||upper.endsWith('.US'))return upper;
   if(/^[A-Z0-9]+$/.test(upper))return upper;
@@ -1003,10 +981,8 @@ function toQuoteSymbol(raw){
 function toStooqSymbol(raw){
   const s=String(raw||'').trim();
   if(!s)return null;
-
   const cleaned=s.replace(/[^A-Z0-9.&-]/gi,'');
   if(!cleaned)return null;
-
   const upper=cleaned.toUpperCase();
   if(upper.endsWith('.NS')||upper.endsWith('.BO')||upper.endsWith('.IN')||upper.endsWith('.US'))return upper.toLowerCase();
   if(/^[A-Z0-9]+$/.test(upper))return `${upper.toLowerCase()}.us`;
@@ -1045,8 +1021,6 @@ async function fetchMFNav(schemeCode){
   return{nav,prevNav:+(d[1]?.nav)||nav,date:d[0]?.date};
 }
 
-// Stooq is tried first because it is usually the most reliable public CORS source for browser-based portfolios.
-// Yahoo Finance and Alpha Vantage remain as fallbacks when a symbol is not available from Stooq.
 async function fetchStockQuote(symbol){
   const quoteSymbol=toQuoteSymbol(symbol);
   const stooqSymbol=toStooqSymbol(symbol);
@@ -1106,7 +1080,6 @@ async function fetchStockQuote(symbol){
 
 async function fetchUsdInrRate(){
   try{
-    // Stooq: USDINR is listed as INRUSD on Stooq — use frankfurter instead, it has CORS
     const res=await fetchTimeout('https://api.frankfurter.app/latest?from=USD&to=INR');
     if(!res.ok)throw new Error('frankfurter http '+res.status);
     const j=await res.json();
@@ -1117,7 +1090,6 @@ async function fetchUsdInrRate(){
       return rate;
     }
   }catch(e){
-    // Fallback: try Stooq for USD/INR
     try{
       const res2=await fetchTimeout('https://stooq.com/q/l/?s=usd/inr&f=sd2t2ohlcv&h&e=csv');
       if(res2.ok){
@@ -1131,7 +1103,6 @@ async function fetchUsdInrRate(){
   console.warn('[live-prices] USD/INR rate fetch failed, using last known:',usdInrRate);
 }
 
-// Sequential fetching with a small gap — Stooq is well-behaved but no need to hammer it
 async function runBatched(items,worker,batchSize=3,delayMs=300){
   for(let i=0;i<items.length;i+=batchSize){
     await Promise.all(items.slice(i,i+batchSize).map(worker));
@@ -1173,6 +1144,7 @@ function updateLiveBadge(state){
   el.innerHTML=`<i class="fa fa-circle" style="font-size:6px;margin-right:5px"></i>Live · NAV/CMP as of ${lastLiveUpdate?lastLiveUpdate.toLocaleTimeString():'—'}`;
   el.style.color='var(--green)';
 }
+
 async function refreshAllLivePrices(){
   if(liveBusy)return;
   liveBusy=true;
@@ -1181,7 +1153,6 @@ async function refreshAllLivePrices(){
   if(btn)btn.disabled=true;
   let ok=0,fail=0;const failedSymbols=[];
   try{
-    // ── Mutual funds: NAV via mfapi.in (direct CORS, no proxy) ──
     const mfRows=[...db.wealthlite,...db.personalmf].filter(r=>r.schemeCode);
     const codes=[...new Set(mfRows.map(r=>String(r.schemeCode)))];
     const navCache={};
@@ -1199,7 +1170,6 @@ async function refreshAllLivePrices(){
       }
     });
 
-    // ── Equities, ETFs & SGB: price via Yahoo Finance (direct CORS, no proxy) ──
     const eqRows=[...db.indianeq,...db.useq,...db.sgb].filter(r=>r.symbol);
     const symbols=[...new Set(eqRows.map(r=>r.symbol))];
     const qCache={};
@@ -1226,652 +1196,1053 @@ async function refreshAllLivePrices(){
       }
     });
 
-    // ── USD/INR rate (frankfurter.app, CORS-enabled) ──
     await fetchUsdInrRate();
 
     saveDB();
     lastLiveUpdate=new Date();
-    updateLiveBadge(fail&&!ok?'err':'ok');
-    const renders={dashboard:buildDashboard,fd:buildFDPage,wealthlite:buildWLPage,personalmf:buildPMFPage,indianeq:buildIEPage,useq:buildUSPage,sgb:buildSGBPage};
-    if(renders[activePage])renders[activePage]();
-    updateSidebar();
-    if(failedSymbols.length)console.warn('[live-prices] failed symbols:',failedSymbols);
-    if(fail&&!ok)toast('Could not fetch any live prices — check your internet connection','err');
-    else if(fail)toast(`Prices updated (${ok} ok · ${fail} failed — see console for details)`,'warn');
-    else toast('All live prices updated ✓','ok');
+    updateLiveBadge('ok');
+    showToast('Live prices updated successfully','ok');
   }catch(e){
-    console.error('[live-prices] unexpected error:',e);
+    console.error(e);
     updateLiveBadge('err');
-    toast('Live price refresh failed unexpectedly','err');
+    showToast('Failed to update live prices','err');
   }finally{
-    liveBusy=false;
     if(btn)btn.disabled=false;
+    liveBusy=false;
+    updateAllPages();
   }
 }
 
-
-
-// ── FORMATTERS ──
-const inr=(n,s=false)=>{if(n==null||isNaN(n))return'—';if(s){const a=Math.abs(n);if(a>=1e7)return'₹'+(n/1e7).toFixed(2)+'Cr';if(a>=1e5)return'₹'+(n/1e5).toFixed(2)+'L';return'₹'+n.toFixed(0);}return'₹'+new Intl.NumberFormat('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n);};
-const usd=(n)=>n==null||isNaN(n)?'—':'$'+n.toFixed(2);
-const pct=(n,sign=true)=>(sign&&n>=0?'+':'')+n.toFixed(2)+'%';
-const sn=(s,m=28)=>s.length>m?s.slice(0,m)+'…':s;
-const glCls=(v)=>v>0?'g':v<0?'r':'n';
-const isSIP=(n)=>/sip/i.test(n);
-const isELSS=(n)=>/elss/i.test(n);
-
-// ── CHARTS REGISTRY ──
-const charts={};
-function mkChart(id,cfg){
-  try{
-    if(typeof Chart==='undefined'){console.warn('Chart.js not loaded, skipping chart',id);return;}
-    const el=document.getElementById(id);
-    if(!el)return;
-    if(charts[id])charts[id].destroy();
-    charts[id]=new Chart(el,cfg);
-  }catch(err){console.warn('Chart render failed for',id,err);}
+// ══ TOASTS ══
+function showToast(msg,type='ok'){
+  const t=document.createElement('div');
+  t.className=`toast ${type}`;
+  t.innerHTML=`<i class="fa ${type==='ok'?'fa-circle-check':'fa-circle-exclamation'}"></i><span>${msg}</span>`;
+  document.getElementById('toasts').appendChild(t);
+  setTimeout(()=>t.remove(),4000);
 }
 
-function setChartSearch(chartId,label){
-  if(!label) return;
-  switch(chartId){
-    case 'fd-mat-c':
-      label=label.split(' #')[0];
-    case 'fd-bank-c':
-      document.getElementById('fd-q').value=label;
-      document.getElementById('fd-status-f').value='';
-      renderFD();
-      break;
-    case 'wl-ret-c':
-    case 'wl-stk-c':
-      document.getElementById('wl-q').value=label;
-      renderMF('wealthlite');
-      break;
-    case 'pmf-ret-c':
-      document.getElementById('pmf-q').value=label;
-      renderMF('personalmf');
-      break;
-    case 'pmf-owner-c':
-      document.getElementById('pmf-owner-f').value=label;
-      renderMF('personalmf');
-      break;
-    case 'ie-top-c':
-      document.getElementById('ie-q').value=label;
-      renderEq('indianeq');
-      break;
-    case 'ie-exch-c':
-      document.getElementById('ie-exch-f').value=label;
-      renderEq('indianeq');
-      break;
-    case 'ie-owner-c':
-      document.getElementById('ie-owner-f').value=label;
-      renderEq('indianeq');
-      break;
-    case 'us-top-c':
-    case 'us-weight-c':
-      document.getElementById('us-q').value=label;
-      renderEq('useq');
-      break;
-    case 'sgb-cmp-c':
-      document.getElementById('sgb-q').value=label;
-      renderSGB();
-      break;
-  }
-}
-
-function gotoPageChart(label){
-  const map={
-    'Fixed Deposits':'fd',
-    'Wealthlite MF':'wealthlite',
-    'Personal MF':'personalmf',
-    'Indian Equity':'indianeq',
-    'US Equity':'useq',
-    'SGB / Gold':'sgb',
-    'Debt':'fd',
-    'Equity':'indianeq',
-    'Mutual Funds':'wealthlite',
-    'Gold':'sgb'
-  };
-  const page=map[label];
-  if(!page)return;
-  const btn=document.querySelector(`button[onclick*="gotoPage('${page}',"]`);
-  gotoPage(page,btn);
-}
-
-// ── PALETTE ──
-const PAL=['#4d9fff','#0fd98a','#f7c054','#f7546a','#a78bfa','#22d3ee','#fb923c','#34d399','#60a5fa','#f472b6','#38bdf8','#fbbf24','#4ade80','#818cf8','#e879f9','#a3e635','#2dd4bf','#f97316','#c084fc','#facc15'];
-
-// ── NAVIGATION ──
-let activePage='dashboard';
-function gotoPage(id,btn){
+// ══ NAV ══
+function gotoPage(pid,btn){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
+  document.getElementById(`page-${pid}`).classList.add('active');
   if(btn)btn.classList.add('active');
-  activePage=id;
-  const renders={dashboard:buildDashboard,fd:buildFDPage,wealthlite:buildWLPage,personalmf:buildPMFPage,indianeq:buildIEPage,useq:buildUSPage,sgb:buildSGBPage};
-  if(renders[id])renders[id]();
+  if(pid==='dashboard') {
+    updateDashboard();
+  } else if(pid==='fd') {
+    renderFD();
+  } else if(pid==='wealthlite') {
+    renderMF('wealthlite');
+  } else if(pid==='personalmf') {
+    renderMF('personalmf');
+  } else if(pid==='indianeq') {
+    renderEq('indianeq');
+  } else if(pid==='useq') {
+    renderEq('useq');
+  } else if(pid==='sgb') {
+    renderSGB();
+  }
+  applyColumnVisibility(pid);
 }
 
-// ── SIDEBAR TOTALS ──
-function updateSidebar(){
-  const keys=['fd','wealthlite','personalmf','indianeq','useq','sgb'];
-  let inv=0,val=0;
-  keys.forEach(k=>{
-    const rows=db[k]||[];
-    inv+=rows.reduce((s,r)=>s+(+r.invested||0),0);
-    val+=rows.reduce((s,r)=>s+(+r.totalValue||0),0);
-    document.getElementById('cnt-'+k)||null;
-    const el=document.getElementById('cnt-'+{fd:'fd',wealthlite:'wl',personalmf:'pmf',indianeq:'ie',useq:'us',sgb:'sgb'}[k]);
-    if(el)el.textContent=rows.length;
-  });
-  const gl=val-inv,r=inv?gl/inv*100:0;
-  document.getElementById('sb-inv').textContent=inr(inv,true);
-  document.getElementById('sb-val').textContent=inr(val,true);
-  const re=document.getElementById('sb-ret');
-  re.textContent=pct(r);re.style.color=r>=0?'var(--green)':'var(--red)';
-}
+// ══ FORMATS ══
+const fmtCur = (v,curr='₹') => {
+  if(!Number.isFinite(v)) return '—';
+  const pf = v<0?'-':'';
+  const abs = Math.abs(v).toFixed(2);
+  const parts = abs.split('.');
+  let lastThree = parts[0].substring(parts[0].length-3);
+  const otherParts = parts[0].substring(0,parts[0].length-3);
+  if(otherParts!=='') lastThree=','+lastThree;
+  const main = otherParts.replace(/\B(?=(\d{2})+(?!\d))/g,",")+lastThree;
+  return `${pf}${curr}${main}.${parts[1]}`;
+};
+const fmtPct = v => Number.isFinite(v) ? `${v>=0?'+':''}${v.toFixed(2)}%` : '—';
 
-// ── DASHBOARD ──
-let ringInst=null,allocInst=null,topInst=null;
-function buildDashboard(){
-  document.getElementById('dash-ts').textContent='Updated '+new Date().toLocaleTimeString();
-  const cats=[
-    {key:'fd',label:'Fixed Deposits',icon:'fa-landmark',c:'var(--gold)'},
-    {key:'wealthlite',label:'Wealthlite MF',icon:'fa-chart-line',c:'var(--blue)'},
-    {key:'personalmf',label:'Personal MF',icon:'fa-folder-open',c:'var(--purple)'},
-    {key:'indianeq',label:'Indian Equity',icon:'fa-indian-rupee-sign',c:'var(--green)'},
-    {key:'useq',label:'US Equity',icon:'fa-dollar-sign',c:'var(--teal)'},
-    {key:'sgb',label:'SGB / Gold',icon:'fa-coins',c:'var(--gold)'},
-  ];
-  let totalInv=0,totalVal=0,totalGL=0,totalDaily=0;
-  const catData=cats.map((c,i)=>{
-    const rows=db[c.key]||[];
-    const fx=c.key==='useq'?usdInrRate:1;
-    const inv=rows.reduce((s,r)=>s+safeNum(r.invested),0)*fx;
-    const val=rows.reduce((s,r)=>s+safeNum(r.totalValue),0)*fx;
-    const gl=rows.reduce((s,r)=>s+safeNum(r.totalGainLoss),0)*fx;
-    const daily=rows.reduce((s,r)=>s+safeNum(r.dailyGainLoss),0)*fx;
-    totalInv+=inv;totalVal+=val;totalGL+=gl;totalDaily+=daily;
-    return{...c,inv,val,gl,daily,ret:inv?gl/inv*100:0,color:PAL[i],sub:c.key==='useq'?` · @₹${usdInrRate.toFixed(2)}/$`:''};
-  });
+// ══ GLOBAL SORT STATE ══
+const sortState = { fd:{col:null,asc:true}, wealthlite:{col:null,asc:true}, personalmf:{col:null,asc:true}, indianeq:{col:null,asc:true}, useq:{col:null,asc:true}, sgb:{col:null,asc:true} };
 
-  // Hero
-  document.getElementById('ring-total').textContent=inr(totalVal,true);
-  document.getElementById('h-inv').textContent=inr(totalInv,true);
-  const hgl=document.getElementById('h-gl');
-  hgl.textContent=(totalGL>=0?'+':'')+inr(Math.abs(totalGL),true);hgl.style.color=totalGL>=0?'var(--green)':'var(--red)';
-  const hret=document.getElementById('h-ret');
-  const retPct=totalInv?totalGL/totalInv*100:0;
-  hret.textContent=pct(retPct);hret.style.color=retPct>=0?'var(--gold)':'var(--red)';
-
-  // Ring chart
-  mkChart('ring-c',{
-    type:'doughnut',
-    data:{labels:catData.map(c=>c.label),datasets:[{data:catData.map(c=>c.val),backgroundColor:catData.map(c=>c.color),borderWidth:0,hoverOffset:5}]},
-    options:{
-      responsive:false,
-      cutout:'68%',
-      onClick:(evt,active)=>{if(active.length){const chart=charts['ring-c'];const idx=active[0].index;gotoPageChart(chart.data.labels[idx]);}},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${inr(ctx.raw,true)}`}}}
-    }
-  });
-  document.getElementById('ring-legend').innerHTML=catData.map(c=>`
-    <div class="legend-row">
-      <div class="legend-dot" style="background:${c.color}"></div>
-      <span class="legend-name">${c.label}</span>
-      <span class="legend-val">${inr(c.val,true)}</span>
-    </div>`).join('');
-
-  // Category tiles
-  document.getElementById('cat-tiles').innerHTML=catData.map(c=>`
-    <div class="sum-card" style="--c:${c.color};cursor:pointer" onclick="gotoPage('${c.key}',document.querySelector('.nav-btn[onclick*=\\'${c.key}\\']'))">
-      <div class="sum-label">${c.label}</div>
-      <div class="sum-val" style="--vc:var(--text)">${inr(c.val,true)}</div>
-      <div class="sum-sub">Inv: ${inr(c.inv,true)} · <span style="color:${c.gl>=0?'var(--green)':'var(--red)'}">${c.gl>=0?'+':''}${inr(Math.abs(c.gl),true)} (${pct(c.ret)})</span>${c.sub||''}</div>
-      <i class="fa ${c.icon} sum-icon"></i>
-    </div>`).join('');
-
-  // Alloc chart
-  mkChart('alloc-c',{
-    type:'doughnut',
-    data:{labels:catData.map(c=>c.label),datasets:[{data:catData.map(c=>c.val),backgroundColor:catData.map(c=>c.color),borderWidth:0,hoverOffset:4}]},
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['alloc-c'];const idx=active[0].index;gotoPageChart(chart.data.labels[idx]);}},
-      plugins:{legend:{position:'right',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:6}},tooltip:{callbacks:{label:ctx=>` ${(ctx.raw/totalVal*100).toFixed(1)}%`}}}
-    }
-  });
-
-  // Asset-class chart — Debt(FD) / Equity(Indian+US) / Mutual Funds(Wealthlite+Personal) / Cash / Gold(SGB)
-  const byKey=k=>(catData.find(c=>c.key===k)||{val:0}).val;
-  const assetClasses=[
-    {label:'Debt',val:byKey('fd'),color:'#f7c054'},
-    {label:'Equity',val:byKey('indianeq')+byKey('useq'),color:'#4d9fff'},
-    {label:'Mutual Funds',val:byKey('wealthlite')+byKey('personalmf'),color:'#a78bfa'},
-    {label:'Cash',val:0,color:'#22d3ee'},
-    {label:'Gold',val:byKey('sgb'),color:'#0fd98a'},
-  ];
-  const totalAC=assetClasses.reduce((s,a)=>s+a.val,0)||1;
-  mkChart('assetclass-c',{
-    type:'doughnut',
-    data:{labels:assetClasses.map(a=>a.label),datasets:[{data:assetClasses.map(a=>a.val),backgroundColor:assetClasses.map(a=>a.color),borderWidth:0,hoverOffset:4}]},
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['assetclass-c'];const label=chart.data.labels[active[0].index];gotoPageChart(label);}},
-      plugins:{legend:{position:'right',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:6}},tooltip:{callbacks:{label:ctx=>` ${inr(ctx.raw,true)} (${(ctx.raw/totalAC*100).toFixed(1)}%)`}}}}
-  });
-
-  // Top holdings across all assets
-  const allRows=[];
-  db.wealthlite.forEach(r=>allRows.push({label:sn(r.name,22),val:r.totalValue}));
-  db.indianeq.forEach(r=>allRows.push({label:r.symbol,val:r.totalValue}));
-  db.fd.forEach(r=>allRows.push({label:r.bank,val:r.totalValue}));
-  const top8=allRows.sort((a,b)=>b.val-a.val).slice(0,8);
-  mkChart('top-c',{
-    type:'bar',
-    data:{labels:top8.map(r=>r.label),datasets:[{label:'Value',data:top8.map(r=>r.val),backgroundColor:PAL.slice(0,8).map(c=>c+'cc'),borderRadius:4,borderSkipped:false}]},
-    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${inr(ctx.raw)}`}}},scales:{x:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:10},callback:v=>inr(v,true)}},y:{grid:{display:false},ticks:{color:'#c0cce0',font:{size:10}}}}}
-  });
-
-  // Gainers / Losers across MF
-  const allMF=[...db.wealthlite,...db.personalmf].sort((a,b)=>b.returnPct-a.returnPct);
-  document.getElementById('gl-gainers').innerHTML=allMF.slice(0,5).map(f=>`
-    <div class="gl-row"><div class="gl-name">${sn(f.name,26)}</div><div class="gl-pct" style="color:var(--green)">${pct(f.returnPct)}</div></div>`).join('');
-  const losers=allMF.filter(f=>f.returnPct<0).sort((a,b)=>a.returnPct-b.returnPct).slice(0,5);
-  document.getElementById('gl-losers').innerHTML=(losers.length?losers:allMF.slice(-5).reverse()).map(f=>`
-    <div class="gl-row"><div class="gl-name">${sn(f.name,26)}</div><div class="gl-pct" style="color:${f.returnPct<0?'var(--red)':'var(--muted)'}">${pct(f.returnPct)}</div></div>`).join('');
-
-  updateSidebar();
-}
-
-// ── SORT STATE ──
-const sortState={};
 function sortTable(ds,col){
-  if(!sortState[ds])sortState[ds]={col:null,dir:-1};
-  const s=sortState[ds];
-  if(s.col===col)s.dir*=-1; else{s.col=col;s.dir=-1;}
-  const renders={fd:renderFD,wealthlite:()=>renderMF('wealthlite'),personalmf:()=>renderMF('personalmf'),indianeq:()=>renderEq('indianeq'),useq:()=>renderEq('useq'),sgb:renderSGB};
-  if(renders[ds])renders[ds]();
-}
-function getSorted(ds){
-  const s=sortState[ds]||{col:null,dir:-1};
-  return s.col?[...db[ds]].sort((a,b)=>{const av=a[s.col],bv=b[s.col];return(typeof av==='string'?av.toLowerCase().localeCompare(bv.toLowerCase()):av-bv)*s.dir}):[...db[ds]];
-}
-function markSort(ds,activeCol){
-  const s=sortState[ds];
-  document.querySelectorAll(`[id^="${ds.replace('wealthlite','wl').replace('personalmf','pmf').replace('indianeq','ie').replace('useq','us').replace('sgb','sgb')}th-"]`).forEach(th=>{
+  const state = sortState[ds];
+  if(state.col===col) {
+    state.asc = !state.asc;
+  } else {
+    state.col = col;
+    state.asc = true;
+  }
+  document.querySelectorAll(`#page-${ds} th[data-col]`).forEach(th=>{
     th.classList.remove('sorted');
-    th.querySelector('.si').textContent='↕';
+    const si = th.querySelector('.si');
+    if(si) si.innerHTML='↕';
   });
-  if(s&&s.col){const id=`${ds.replace('wealthlite','wl').replace('personalmf','pmf').replace('indianeq','ie').replace('useq','us')}th-${s.col}`;const el=document.getElementById(id);if(el){el.classList.add('sorted');el.querySelector('.si').textContent=s.dir===1?'↑':'↓';}}
+  const th = document.getElementById(`${ds==='wl'?'wl':ds==='pmf'?'pmf':ds==='ie'?'ie':ds}th-${col}`);
+  if(th) {
+    th.classList.add('sorted');
+    const si = th.querySelector('.si');
+    if(si) si.innerHTML = state.asc?'↑':'↓';
+  }
+  if(ds==='fd') renderFD();
+  else if(ds==='wealthlite'||ds==='personalmf') renderMF(ds);
+  else if(ds==='indianeq'||ds==='useq') renderEq(ds);
+  else if(ds==='sgb') renderSGB();
 }
 
-// ── SHARED SUMMARY BUILDER ──
-function buildSum(containerId,inv,val,gl,daily,extra=[]){
-  const ret=inv?gl/inv*100:0;
-  document.getElementById(containerId).innerHTML=`
-    <div class="sum-card" style="--c:var(--blue)"><div class="sum-label">Invested</div><div class="sum-val">${inr(inv,true)}</div><i class="fa fa-wallet sum-icon"></i></div>
-    <div class="sum-card" style="--c:var(--green)"><div class="sum-label">Current Value</div><div class="sum-val">${inr(val,true)}</div><i class="fa fa-chart-line sum-icon"></i></div>
-    <div class="sum-card" style="--c:${gl>=0?'var(--green)':'var(--red)'}"><div class="sum-label">Gain / Loss</div><div class="sum-val" style="--vc:${gl>=0?'var(--green)':'var(--red)'}">${(gl>=0?'+':'')+inr(Math.abs(gl),true)}</div><div class="sum-sub">${pct(ret)} overall</div><i class="fa fa-arrow-trend-up sum-icon"></i></div>
-    <div class="sum-card" style="--c:${daily>=0?'var(--green)':'var(--red)'}"><div class="sum-label">Daily G/L</div><div class="sum-val" style="--vc:${daily>=0?'var(--green)':'var(--red)'}">${daily!=null?(daily>=0?'+':'')+inr(Math.abs(daily),true):'—'}</div><i class="fa fa-calendar-day sum-icon"></i></div>
-    ${extra.join('')}`;
+// ══ RENDERING & LOGIC ══
+let activeCharts = {};
+function trackChart(id,chart){
+  if(activeCharts[id]) activeCharts[id].destroy();
+  activeCharts[id] = chart;
 }
 
-// ══ FD PAGE ══
-function buildFDPage(){
-  const rows=db.fd;
-  const inv=rows.reduce((s,r)=>s+safeNum(r.invested),0);
-  const val=rows.reduce((s,r)=>s+safeNum(r.totalValue),0);
-  const gl=rows.reduce((s,r)=>s+safeNum(r.totalGainLoss),0);
-  const daily=rows.reduce((s,r)=>s+safeNum(r.dailyGainLoss),0);
-  buildSum('fd-sum',inv,val,gl,daily);
-  document.getElementById('fd-sub').textContent=`${rows.length} deposits · Invested ${inr(inv,true)} · Value ${inr(val,true)}`;
-  // Maturity value by bank
-  const byMat=[...rows].sort((a,b)=>(b.maturityValue||b.totalValue)-(a.maturityValue||a.totalValue));
-  mkChart('fd-mat-c',{type:'bar',data:{labels:byMat.map(r=>sn(r.bank+' #'+r.fdNumber,16)),datasets:[{label:'Current',data:byMat.map(r=>r.totalValue),backgroundColor:'#4d9fff99',borderRadius:3},{label:'At Maturity',data:byMat.map(r=>r.maturityValue||r.totalValue),backgroundColor:'#0fd98a55',borderRadius:3}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['fd-mat-c'];setChartSearch('fd-mat-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'bottom',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:8}},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${inr(c.raw)}`}}},scales:{x:{grid:{display:false},ticks:{color:'#6b7fa3',font:{size:9}}},y:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:9},callback:v=>inr(v,true)}}}}});
-  // Bank-wise allocation
-  const byBank={};
-  rows.forEach(r=>{byBank[r.bank]=(byBank[r.bank]||0)+r.totalValue;});
-  const bankLabels=Object.keys(byBank);
-  mkChart('fd-bank-c',{type:'doughnut',data:{labels:bankLabels,datasets:[{data:bankLabels.map(b=>byBank[b]),backgroundColor:PAL,borderWidth:0,hoverOffset:4}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['fd-bank-c'];setChartSearch('fd-bank-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'right',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:6}},tooltip:{callbacks:{label:c=>` ${inr(c.raw,true)} (${(c.raw/val*100).toFixed(1)}%)`}}}}});
-  renderFD();
+function updateCounts(){
+  document.getElementById('cnt-fd').textContent = db.fd.length;
+  document.getElementById('cnt-wl').textContent = db.wealthlite.length;
+  document.getElementById('cnt-pmf').textContent = db.personalmf.length;
+  document.getElementById('cnt-ie').textContent = db.indianeq.length;
+  document.getElementById('cnt-us').textContent = db.useq.length;
+  document.getElementById('cnt-sgb').textContent = db.sgb.length;
 }
+
+function getAggregateStats(){
+  let totalInv = 0, totalVal = 0, totalDailyGl = 0;
+  
+  db.fd.forEach(r => { totalInv += safeNum(r.invested); totalVal += safeNum(r.totalValue); totalDailyGl += safeNum(r.dailyGainLoss); });
+  db.wealthlite.forEach(r => { totalInv += safeNum(r.invested); totalVal += safeNum(r.totalValue); totalDailyGl += safeNum(r.dailyGainLoss); });
+  db.personalmf.forEach(r => { totalInv += safeNum(r.invested); totalVal += safeNum(r.totalValue); totalDailyGl += safeNum(r.dailyGainLoss); });
+  db.indianeq.forEach(r => { totalInv += safeNum(r.invested); totalVal += safeNum(r.totalValue); totalDailyGl += safeNum(r.dailyGainLoss); });
+  db.useq.forEach(r => { 
+    totalInv += safeNum(r.invested)*usdInrRate; 
+    totalVal += safeNum(r.totalValue)*usdInrRate; 
+    totalDailyGl += safeNum(r.dailyGainLoss||0)*usdInrRate; 
+  });
+  db.sgb.forEach(r => { totalInv += safeNum(r.invested); totalVal += safeNum(r.totalValue); totalDailyGl += safeNum(r.dailyGainLoss); });
+
+  const totalGl = totalVal - totalInv;
+  const totalRet = totalInv ? (totalGl/totalInv*100) : 0;
+  return { totalInv, totalVal, totalGl, totalRet, totalDailyGl };
+}
+
+function updateTotalsPanel(){
+  const s = getAggregateStats();
+  document.getElementById('sb-inv').textContent = fmtCur(s.totalInv);
+  document.getElementById('sb-val').textContent = fmtCur(s.totalVal);
+  const retEl = document.getElementById('sb-ret');
+  retEl.textContent = `${fmtCur(s.totalGl)} (${fmtPct(s.totalRet)})`;
+  retEl.className = `sb-total-val ${s.totalGl>=0?'g':'r'}`;
+}
+
+function updateAllPages(){
+  updateCounts();
+  updateTotalsPanel();
+  const activePage = document.querySelector('.page.active');
+  if(activePage){
+    const id = activePage.id.replace('page-','');
+    if(id==='dashboard') updateDashboard();
+    else if(id==='fd') renderFD();
+    else if(id==='wealthlite'||id==='personalmf') renderMF(id);
+    else if(id==='indianeq'||id==='useq') renderEq(id);
+    else if(id==='sgb') renderSGB();
+  }
+}
+
+// ── Dashboard Renderer ──
+function updateDashboard(){
+  const s = getAggregateStats();
+  document.getElementById('dash-ts').textContent = `Overview as of ${new Date().toLocaleDateString()}`;
+  document.getElementById('h-inv').textContent = fmtCur(s.totalInv);
+  
+  const glEl = document.getElementById('h-gl');
+  glEl.textContent = fmtCur(s.totalGl);
+  glEl.style.color = s.totalGl>=0 ? 'var(--green)' : 'var(--red)';
+  
+  const retEl = document.getElementById('h-ret');
+  retEl.textContent = fmtPct(s.totalRet);
+  retEl.style.color = s.totalRet>=0 ? 'var(--green)' : 'var(--red)';
+
+  // Allocation categories calculation
+  const cats = {
+    fd:{lbl:'Fixed Deposits',val:0,inv:0,icon:'fa-landmark',c:'--blue',p:'fd'},
+    wl:{lbl:'Wealth Elite MF',val:0,inv:0,icon:'fa-chart-line',c:'--green',p:'wealthlite'},
+    pmf:{lbl:'Personal MF',val:0,inv:0,icon:'fa-folder-open',c:'--purple',p:'personalmf'},
+    ie:{lbl:'Indian Equity',val:0,inv:0,icon:'fa-indian-rupee-sign',c:'--teal',p:'indianeq'},
+    us:{lbl:'US Equity',val:0,inv:0,icon:'fa-dollar-sign',c:'--gold',p:'useq'},
+    sgb:{lbl:'SGB / Gold',val:0,inv:0,icon:'fa-coins',c:'--red',p:'sgb'}
+  };
+
+  db.fd.forEach(r => { cats.fd.val += safeNum(r.totalValue); cats.fd.inv += safeNum(r.invested); });
+  db.wealthlite.forEach(r => { cats.wl.val += safeNum(r.totalValue); cats.wl.inv += safeNum(r.invested); });
+  db.personalmf.forEach(r => { cats.pmf.val += safeNum(r.totalValue); cats.pmf.inv += safeNum(r.invested); });
+  db.indianeq.forEach(r => { cats.ie.val += safeNum(r.totalValue); cats.ie.inv += safeNum(r.invested); });
+  db.useq.forEach(r => { cats.us.val += safeNum(r.totalValue)*usdInrRate; cats.us.inv += safeNum(r.invested)*usdInrRate; });
+  db.sgb.forEach(r => { cats.sgb.val += safeNum(r.totalValue); cats.sgb.inv += safeNum(r.invested); });
+
+  const catArr = Object.values(cats);
+  
+  // Category cards rendering
+  let tilesHTML = '';
+  catArr.forEach(c => {
+    const gl = c.val - c.inv;
+    const ret = c.inv ? (gl/c.inv*100) : 0;
+    tilesHTML += `
+      <div class="sum-card" style="--c:var(${c.c});cursor:pointer" onclick="gotoPage('${c.p}', document.querySelector('[onclick*=\\'${c.p}\\']'))">
+        <div class="sum-label">${c.lbl}</div>
+        <div class="sum-val">${fmtCur(c.val)}</div>
+        <div class="sum-sub ${gl>=0?'g':'r'}">${fmtPct(ret)} (${fmtCur(gl)})</div>
+        <div class="sum-icon"><i class="fa ${c.icon}"></i></div>
+      </div>
+    `;
+  });
+  document.getElementById('cat-tiles').innerHTML = tilesHTML;
+
+  // Ring Chart
+  document.getElementById('ring-total').textContent = fmtCur(s.totalVal);
+  const ringCtx = document.getElementById('ring-c').getContext('2d');
+  const ringLabels = catArr.map(c=>c.lbl);
+  const ringData = catArr.map(c=>c.val);
+  const colors = catArr.map(c=>getComputedStyle(document.documentElement).getPropertyValue(c.c).trim());
+
+  trackChart('ring', new Chart(ringCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ringLabels,
+      datasets: [{ data: ringData, backgroundColor: colors, borderWidth: 0, hoverOffset: 4 }]
+    },
+    options: {
+      cutout: '80%',
+      plugins: { legend: { display: false }, tooltip: { enabled: true } },
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  }));
+
+  // Dynamic dashboard legend
+  let legendHTML = '';
+  catArr.forEach((c, i) => {
+    const pct = s.totalVal ? (c.val/s.totalVal*100).toFixed(1) : '0.0';
+    legendHTML += `
+      <div class="legend-row">
+        <div class="legend-dot" style="background:${colors[i]}"></div>
+        <div class="legend-name">${c.lbl}</div>
+        <div class="legend-val">${pct}%</div>
+      </div>
+    `;
+  });
+  document.getElementById('ring-legend').innerHTML = legendHTML;
+
+  // Asset class sorting and top allocation chart mapping
+  const allocationCtx = document.getElementById('alloc-c').getContext('2d');
+  trackChart('alloc', new Chart(allocationCtx, {
+    type: 'bar',
+    data: {
+      labels: ringLabels,
+      datasets: [{ label: 'Current Value', data: ringData, backgroundColor: colors, borderRadius: 6 }]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: { x: { grid: { display: false } }, y: { grid: { display: false } } },
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  }));
+
+  // Asset class chart rendering (Equity, Debt, Gold)
+  let debt = cats.fd.val;
+  let gold = cats.sgb.val;
+  let eq = cats.wl.val + cats.pmf.val + cats.ie.val + cats.us.val;
+  
+  const acCtx = document.getElementById('assetclass-c').getContext('2d');
+  trackChart('assetclass', new Chart(acCtx, {
+    type: 'pie',
+    data: {
+      labels: ['Equity', 'Debt/Bonds', 'Gold/SGB'],
+      datasets: [{ data: [eq, debt, gold], backgroundColor: ['#4d9fff', '#a78bfa', '#f7c054'], borderWidth: 0 }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom', labels: { color: '#6b7fa3', font: { size: 10 } } } },
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  }));
+
+  // Top holdings ranking calculation
+  const allHoldings = [];
+  db.wealthlite.forEach(r => allHoldings.push({name:r.name, val:r.totalValue}));
+  db.personalmf.forEach(r => allHoldings.push({name:r.name, val:r.totalValue}));
+  db.indianeq.forEach(r => allHoldings.push({name:r.name, val:r.totalValue}));
+  db.useq.forEach(r => allHoldings.push({name:r.name, val:r.totalValue*usdInrRate}));
+  db.sgb.forEach(r => allHoldings.push({name:r.name, val:r.totalValue}));
+  db.fd.forEach(r => allHoldings.push({name:`FD (${r.bank})`, val:r.totalValue}));
+
+  allHoldings.sort((a,b) => b.val - a.val);
+  const top8 = allHoldings.slice(0, 8);
+
+  const topCtx = document.getElementById('top-c').getContext('2d');
+  trackChart('top', new Chart(topCtx, {
+    type: 'bar',
+    data: {
+      labels: top8.map(h => h.name),
+      datasets: [{ data: top8.map(h => h.val), backgroundColor: '#22d3ee', borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: { x: { grid: { display: false } }, y: { ticks: { display: false }, grid: { display: false } } },
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  }));
+
+  // Gainers and losers table update
+  const returnList = [];
+  const compileReturns = (arr, ds) => {
+    arr.forEach(r => {
+      let v = r.totalValue;
+      if (ds === 'useq') v *= usdInrRate;
+      returnList.push({ name: r.name || r.bank, pct: r.returnPct, val: v });
+    });
+  };
+  compileReturns(db.wealthlite, 'wealthlite');
+  compileReturns(db.personalmf, 'personalmf');
+  compileReturns(db.indianeq, 'indianeq');
+  compileReturns(db.useq, 'useq');
+  compileReturns(db.sgb, 'sgb');
+
+  returnList.sort((a,b) => b.pct - a.pct);
+  const gainers = returnList.slice(0, 5);
+  const losers = [...returnList].reverse().slice(0, 5);
+
+  const renderGLCards = (targetId, list, isGainer) => {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    el.innerHTML = list.map(item => `
+      <div class="gl-row">
+        <span class="gl-name">${item.name}</span>
+        <span class="gl-pct" style="color:${isGainer?'var(--green)':'var(--red)'}">${fmtPct(item.pct)}</span>
+      </div>
+    `).join('');
+  };
+  renderGLCards('gl-gainers', gainers, true);
+  renderGLCards('gl-losers', losers, false);
+}
+
+// ── FD Page Renderer ──
 function renderFD(){
-  const q=(document.getElementById('fd-q').value||'').toLowerCase();
-  const sf=document.getElementById('fd-status-f').value;
-  const so=document.getElementById('fd-sort').value;
-  if(!sortState.fd)sortState.fd={col:so,dir:-1};
-  let rows=getSorted('fd');
-  if(q)rows=rows.filter(r=>r.bank.toLowerCase().includes(q)||String(r.fdNumber).includes(q));
-  if(sf)rows=rows.filter(r=>r.status===sf);
-  document.getElementById('fd-cnt').textContent=rows.length+' entries';
-  document.getElementById('fd-tot').textContent='Value: '+inr(rows.reduce((s,r)=>s+r.totalValue,0));
-  document.getElementById('fd-tbody').innerHTML=rows.map((r,i)=>{
-    const idx=db.fd.indexOf(r);
-    const today=new Date(),mat=new Date(r.maturityDate),days=Math.max(0,Math.ceil((mat-today)/86400000));
-    return`<tr>
+  let items = [...db.fd];
+  
+  // Filtering & Search
+  const q = document.getElementById('fd-q').value.toLowerCase().trim();
+  if(q){
+    items = items.filter(r => (r.bank||'').toLowerCase().includes(q) || String(r.fdNumber).includes(q));
+  }
+  const status = document.getElementById('fd-status-f').value;
+  if(status){
+    items = items.filter(r => r.status === status);
+  }
+
+  // Sorting
+  const sortOption = document.getElementById('fd-sort').value;
+  const sortColState = sortState.fd.col;
+  if (sortColState) {
+    const asc = sortState.fd.asc;
+    items.sort((a,b) => {
+      let va = a[sortColState], vb = b[sortColState];
+      if (typeof va === 'string') return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+      return asc ? va - vb : vb - va;
+    });
+  } else if(sortOption){
+    if(sortOption==='bank') items.sort((a,b) => a.bank.localeCompare(b.bank));
+    else items.sort((a,b) => b[sortOption] - a[sortOption]);
+  }
+
+  // Cards & Sums calculations
+  let totInv=0, totVal=0;
+  items.forEach(r => { totInv += safeNum(r.invested); totVal += safeNum(r.totalValue); });
+  const totGl = totVal - totInv;
+  const totRet = totInv ? (totGl/totInv*100) : 0;
+
+  document.getElementById('fd-sub').textContent = `Total active FD holdings: ${items.length}`;
+  document.getElementById('fd-cnt').textContent = `${items.length} FDs`;
+  document.getElementById('fd-tot').textContent = `Inv: ${fmtCur(totInv)} | Val: ${fmtCur(totVal)} | Return: ${fmtPct(totRet)}`;
+
+  document.getElementById('fd-sum').innerHTML = `
+    <div class="sum-card" style="--c:var(--blue)">
+      <div class="sum-label">FD Invested</div><div class="sum-val">${fmtCur(totInv)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--green)">
+      <div class="sum-label">Current Value</div><div class="sum-val">${fmtCur(totVal)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--gold)">
+      <div class="sum-label">Net Gain/Loss</div><div class="sum-val ${totGl>=0?'g':'r'}">${fmtCur(totGl)}</div>
+    </div>
+  `;
+
+  // Dynamic timeline & Bank allocation charts
+  const banks = {}, maturity = {};
+  items.forEach(r => {
+    banks[r.bank] = (banks[r.bank]||0) + safeNum(r.totalValue);
+    if(r.maturityDate){
+      const yr = r.maturityDate.substring(0, 4);
+      maturity[yr] = (maturity[yr]||0) + safeNum(r.maturityValue || r.totalValue);
+    }
+  });
+
+  const bCtx = document.getElementById('fd-bank-c').getContext('2d');
+  trackChart('fd-bank', new Chart(bCtx, {
+    type: 'doughnut',
+    data: {
+      labels: Object.keys(banks),
+      datasets: [{ data: Object.values(banks), backgroundColor: ['#4d9fff','#0fd98a','#f7c054','#a78bfa','#22d3ee'], borderWidth: 0 }]
+    },
+    options: { plugins: { legend: { position: 'right' } }, responsive: true, maintainAspectRatio: false }
+  }));
+
+  const mCtx = document.getElementById('fd-mat-c').getContext('2d');
+  trackChart('fd-mat', new Chart(mCtx, {
+    type: 'bar',
+    data: {
+      labels: Object.keys(maturity),
+      datasets: [{ label: 'Maturity Value', data: Object.values(maturity), backgroundColor: '#a78bfa', borderRadius: 4 }]
+    },
+    options: { plugins: { legend: { display: false } }, responsive: true, maintainAspectRatio: false }
+  }));
+
+  // Generate Table Row Elements
+  const tbody = document.getElementById('fd-tbody');
+  tbody.innerHTML = items.map((r,idx) => `
+    <tr>
       <td data-col="bank" style="font-weight:500">${r.bank}</td>
-      <td data-col="fdNumber" class="mono">${r.fdNumber}</td>
-      <td data-col="invested" class="mono">${inr(r.invested)}</td>
-      <td data-col="rate" class="mono">${r.rate?r.rate+'%':'—'}</td>
-      <td data-col="startDate" class="mono">${r.startDate}</td>
-      <td data-col="maturityDate" class="mono">${r.maturityDate}</td>
-      <td data-col="maturityValue" class="mono">${r.maturityValue?inr(r.maturityValue):'—'}</td>
-      <td data-col="totalValue" class="mono">${inr(r.totalValue)}</td>
-      <td data-col="totalGainLoss"><span class="pill ${glCls(r.totalGainLoss)}">${r.totalGainLoss>=0?'▲':'▼'} ${inr(Math.abs(r.totalGainLoss))}</span></td>
-      <td data-col="returnPct"><span class="pill ${glCls(r.returnPct)}">${pct(r.returnPct)}</span></td>
-      <td data-col="dailyGainLoss" class="mono" style="color:${r.dailyGainLoss>0?'var(--green)':r.dailyGainLoss<0?'var(--red)':'var(--muted)'}">${r.dailyGainLoss!=null?inr(r.dailyGainLoss):'—'}</td>
-      <td data-col="status"><span class="pill ${r.status==='Active'?'g':'n'}"><span class="status-dot" style="background:${r.status==='Active'?'var(--green)':'var(--muted)'}"></span>${r.status}</span></td>
-      <td data-col="actions"><div class="ra"><button class="ab" onclick="openEditModal('fd',${idx})"><i class="fa fa-pen"></i></button><button class="ab del" onclick="delEntry('fd',${idx})"><i class="fa fa-trash"></i></button></div></td>
-    </tr>`;
-  }).join('')||emptyRow(13);
+      <td data-col="fdNumber" class="mono">${r.fdNumber || '—'}</td>
+      <td data-col="invested" class="mono">${fmtCur(r.invested)}</td>
+      <td data-col="rate" class="mono">${r.rate? r.rate+'%' : '—'}</td>
+      <td data-col="startDate">${r.startDate||'—'}</td>
+      <td data-col="maturityDate">${r.maturityDate||'—'}</td>
+      <td data-col="maturityValue" class="mono">${fmtCur(r.maturityValue)}</td>
+      <td data-col="totalValue" class="mono" style="font-weight:500">${fmtCur(r.totalValue)}</td>
+      <td data-col="totalGainLoss" class="mono ${r.totalGainLoss>=0?'g':'r'}">${fmtCur(r.totalGainLoss)}</td>
+      <td data-col="returnPct" class="mono"><span class="pill ${r.returnPct>=0?'g':'r'}">${fmtPct(r.returnPct)}</span></td>
+      <td data-col="dailyGainLoss" class="mono ${r.dailyGainLoss>=0?'g':'r'}">${fmtCur(r.dailyGainLoss)}</td>
+      <td><span class="pill ${r.status==='Active'?'b':'n'}"><span class="status-dot" style="background:${r.status==='Active'?'var(--blue)':'var(--muted)'}"></span>${r.status}</span></td>
+      <td data-col="actions">
+        <div class="ra">
+          <button class="ab" onclick="openEditModal('fd', ${idx})"><i class="fa fa-pen"></i></button>
+          <button class="ab del" onclick="deleteEntry('fd', ${idx})"><i class="fa fa-trash-can"></i></button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
   applyColumnVisibility('fd');
 }
 
-// ══ MF RENDERER (shared for wealthlite + personalmf) ══
-function buildWLPage(){
-  const rows=db.wealthlite;
-  const inv=rows.reduce((s,r)=>s+safeNum(r.invested),0),val=rows.reduce((s,r)=>s+safeNum(r.totalValue),0),gl=rows.reduce((s,r)=>s+safeNum(r.totalGainLoss),0),daily=rows.reduce((s,r)=>s+safeNum(r.dailyGainLoss),0);
-  buildSum('wl-sum',inv,val,gl,daily);
-  document.getElementById('wl-sub').textContent=`${rows.length} funds · ${inr(inv,true)} invested · ${inr(val,true)} value`;
-  // Charts
-  const byRet=[...rows].sort((a,b)=>b.returnPct-a.returnPct);
-  mkChart('wl-ret-c',{type:'bar',data:{labels:byRet.map(r=>sn(r.name,14)),datasets:[{data:byRet.map(r=>r.returnPct),backgroundColor:byRet.map(r=>r.returnPct>=0?'#0fd98a99':'#f7546a99'),borderRadius:3}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['wl-ret-c'];setChartSearch('wl-ret-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${pct(c.raw)}`}}},scales:{x:{grid:{display:false},ticks:{color:'#6b7fa3',font:{size:9}}},y:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:9},callback:v=>v+'%'}}}}});
-  const top8=[...rows].sort((a,b)=>b.invested-a.invested).slice(0,8);
-  mkChart('wl-stk-c',{type:'bar',data:{labels:top8.map(r=>sn(r.name,14)),datasets:[{label:'Invested',data:top8.map(r=>r.invested),backgroundColor:'#4d9fff66',borderRadius:3},{label:'Gain',data:top8.map(r=>Math.max(0,r.totalGainLoss)),backgroundColor:'#0fd98a66',borderRadius:3},{label:'Loss',data:top8.map(r=>Math.max(0,-r.totalGainLoss)),backgroundColor:'#f7546a66',borderRadius:3}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['wl-stk-c'];setChartSearch('wl-stk-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'bottom',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:8}},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${inr(c.raw)}`}}},scales:{x:{stacked:true,grid:{display:false},ticks:{color:'#6b7fa3',font:{size:9}}},y:{stacked:true,grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:9},callback:v=>inr(v,true)}}}}});
-  renderMF('wealthlite');
-}
-function buildPMFPage(){
-  const rows=db.personalmf;
-  const inv=rows.reduce((s,r)=>s+safeNum(r.invested),0),val=rows.reduce((s,r)=>s+safeNum(r.totalValue),0),gl=rows.reduce((s,r)=>s+safeNum(r.totalGainLoss),0),daily=rows.reduce((s,r)=>s+safeNum(r.dailyGainLoss),0);
-  buildSum('pmf-sum',inv,val,gl,daily);
-  document.getElementById('pmf-sub').textContent=`${rows.length} funds · ${inr(inv,true)} invested · ${inr(val,true)} value`;
-  const byRet=[...rows].sort((a,b)=>b.returnPct-a.returnPct);
-  mkChart('pmf-ret-c',{type:'bar',data:{labels:byRet.map(r=>sn(r.name,14)),datasets:[{data:byRet.map(r=>r.returnPct),backgroundColor:byRet.map(r=>r.returnPct>=0?'#0fd98a99':'#f7546a99'),borderRadius:3}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['pmf-ret-c'];setChartSearch('pmf-ret-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${pct(c.raw)}`}}},scales:{x:{grid:{display:false},ticks:{color:'#6b7fa3',font:{size:9}}},y:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:9},callback:v=>v+'%'}}}}});
-  const byOwner={};
-  rows.forEach(r=>{const o=r.owner||'Unassigned';byOwner[o]=(byOwner[o]||0)+r.totalValue;});
-  const ownerLabels=Object.keys(byOwner);
-  mkChart('pmf-owner-c',{type:'doughnut',data:{labels:ownerLabels,datasets:[{data:ownerLabels.map(o=>byOwner[o]),backgroundColor:PAL,borderWidth:0,hoverOffset:4}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['pmf-owner-c'];setChartSearch('pmf-owner-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'right',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:6}},tooltip:{callbacks:{label:c=>` ${inr(c.raw,true)} (${(c.raw/val*100).toFixed(1)}%)`}}}}});
-  renderMF('personalmf');
-}
+// ── MF Page Renderer (For Wealth Elite and Personal Mutual Funds) ──
 function renderMF(ds){
-  const pfx={wealthlite:'wl',personalmf:'pmf'}[ds];
-  const q=(document.getElementById(pfx+'-q').value||'').toLowerCase();
-  const glf=document.getElementById(pfx+'-gl-f').value;
-  const ownerF=ds==='personalmf'?document.getElementById('pmf-owner-f').value:'';
-  let rows=getSorted(ds);
-  if(q)rows=rows.filter(r=>r.name.toLowerCase().includes(q)||String(r.schemeCode).includes(q));
-  if(glf==='g')rows=rows.filter(r=>r.totalGainLoss>0);
-  if(glf==='l')rows=rows.filter(r=>r.totalGainLoss<0);
-  if(ownerF)rows=rows.filter(r=>r.owner===ownerF);
-  document.getElementById(pfx+'-cnt').textContent=rows.length+' funds';
-  document.getElementById(pfx+'-tot').textContent='Value: '+inr(rows.reduce((s,r)=>s+r.totalValue,0));
-  document.getElementById(pfx+'-tbody').innerHTML=rows.map(r=>{
-    const idx=db[ds].indexOf(r);
-    return`<tr>
-      <td data-col="name"><div style="font-weight:500;font-size:12px">${r.name}${isSIP(r.name)?'<span class="tag tag-sip">SIP</span>':''}${isELSS(r.name)?'<span class="tag tag-elss">ELSS</span>':''}</div><div style="font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace">#${r.schemeCode}</div></td>
-      ${ds==='personalmf'?`<td data-col="owner"><span class="pill b">${r.owner||'—'}</span></td>`:''}
-      <td data-col="units" class="mono">${(+r.units).toFixed(3)}</td>
-      <td data-col="purchaseNAV" class="mono">${inr(+r.purchaseNAV)}</td>
-      <td data-col="currentNAV" class="mono">${inr(+r.currentNAV)}</td>
-      <td data-col="invested" class="mono">${inr(r.invested)}</td>
-      <td data-col="totalValue" class="mono" style="font-weight:600">${inr(r.totalValue)}</td>
-      <td data-col="totalGainLoss"><span class="pill ${glCls(r.totalGainLoss)}">${r.totalGainLoss>=0?'▲':'▼'} ${inr(Math.abs(r.totalGainLoss))}</span></td>
-      <td data-col="returnPct"><span class="pill ${glCls(r.returnPct)}">${pct(r.returnPct)}</span></td>
-      <td data-col="dailyGainLoss" class="mono" style="color:${r.dailyGainLoss>0?'var(--green)':r.dailyGainLoss<0?'var(--red)':'var(--muted)'}">${r.dailyGainLoss!=null?inr(r.dailyGainLoss):'—'}</td>
-      <td data-col="actions"><div class="ra"><button class="ab" onclick="openEditModal('${ds}',${idx})"><i class="fa fa-pen"></i></button><button class="ab del" onclick="delEntry('${ds}',${idx})"><i class="fa fa-trash"></i></button></div></td>
-    </tr>`;
-  }).join('')||emptyRow(ds==='personalmf'?11:10);
+  let items = [...db[ds]];
+
+  // Filters & Search
+  const q = document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-q`).value.toLowerCase().trim();
+  if(q){
+    items = items.filter(r => (r.name||'').toLowerCase().includes(q) || String(r.schemeCode).includes(q));
+  }
+  const glFilter = document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-gl-f`).value;
+  if(glFilter){
+    items = items.filter(r => glFilter==='g' ? r.totalGainLoss>=0 : r.totalGainLoss<0);
+  }
+  if(ds==='personalmf'){
+    const owner = document.getElementById('pmf-owner-f').value;
+    if(owner) items = items.filter(r => r.owner === owner);
+  }
+
+  // Dynamic sorting calculations
+  const sortOption = document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-sort`).value;
+  const sortColState = sortState[ds].col;
+  if (sortColState) {
+    const asc = sortState[ds].asc;
+    items.sort((a,b) => {
+      let va = a[sortColState], vb = b[sortColState];
+      if (typeof va === 'string') return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+      return asc ? va - vb : vb - va;
+    });
+  } else if(sortOption){
+    if(sortOption==='name') items.sort((a,b) => a.name.localeCompare(b.name));
+    else items.sort((a,b) => b[sortOption] - a[sortOption]);
+  }
+
+  let totInv=0, totVal=0, totDaily=0;
+  items.forEach(r => { totInv += safeNum(r.invested); totVal += safeNum(r.totalValue); totDaily += safeNum(r.dailyGainLoss); });
+  const totGl = totVal - totInv;
+  const totRet = totInv ? (totGl/totInv*100) : 0;
+
+  document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-sub`).textContent = `Dynamic active fund investments: ${items.length}`;
+  document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-cnt`).textContent = `${items.length} funds`;
+  document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-tot').textContent = `Inv: ${fmtCur(totInv)} | Val: ${fmtCur(totVal)} | Return: ${fmtPct(totRet)}`;
+
+  document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-sum').innerHTML = `
+    <div class="sum-card" style="--c:var(--blue)">
+      <div class="sum-label">Total Invested</div><div class="sum-val">${fmtCur(totInv)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--green)">
+      <div class="sum-label">Current Value</div><div class="sum-val">${fmtCur(totVal)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--gold)">
+      <div class="sum-label">Gain / Loss</div><div class="sum-val ${totGl>=0?'g':'r'}">${fmtCur(totGl)}</div>
+      <div class="sum-sub ${totGl>=0?'g':'r'}">${fmtPct(totRet)} overall</div>
+    </div>
+  `;
+
+  // Render Page Specific Charts
+  if(ds==='wealthlite'){
+    const retCtx = document.getElementById('wl-ret-c').getContext('2d');
+    trackChart('wl-ret', new Chart(retCtx, {
+      type: 'bar',
+      data: {
+        labels: items.map(r => r.name.substring(0, 15)+'...'),
+        datasets: [{ label: 'Return %', data: items.map(r => r.returnPct), backgroundColor: items.map(r => r.returnPct>=0?'#0fd98a':'#f7546a'), borderRadius: 4 }]
+      },
+      options: { plugins: { legend: { display: false } }, responsive: true, maintainAspectRatio: false }
+    }));
+
+    const sortedByVal = [...items].sort((a,b)=>b.totalValue-a.totalValue).slice(0, 8);
+    const stkCtx = document.getElementById('wl-stk-c').getContext('2d');
+    trackChart('wl-stk', new Chart(stkCtx, {
+      type: 'bar',
+      data: {
+        labels: sortedByVal.map(r => r.name.substring(0, 12)+'...'),
+        datasets: [
+          { label: 'Invested', data: sortedByVal.map(r => r.invested), backgroundColor: '#1a2535' },
+          { label: 'Current Value', data: sortedByVal.map(r => r.totalValue), backgroundColor: '#4d9fff', borderRadius: 4 }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    }));
+  } else {
+    const retCtx = document.getElementById('pmf-ret-c').getContext('2d');
+    trackChart('pmf-ret', new Chart(retCtx, {
+      type: 'bar',
+      data: {
+        labels: items.map(r => r.name.substring(0, 15)+'...'),
+        datasets: [{ label: 'Return %', data: items.map(r => r.returnPct), backgroundColor: items.map(r => r.returnPct>=0?'#0fd98a':'#f7546a'), borderRadius: 4 }]
+      },
+      options: { plugins: { legend: { display: false } }, responsive: true, maintainAspectRatio: false }
+    }));
+
+    const owners = {};
+    items.forEach(r => owners[r.owner||'Family'] = (owners[r.owner||'Family']||0) + safeNum(r.totalValue));
+    const ownCtx = document.getElementById('pmf-owner-c').getContext('2d');
+    trackChart('pmf-own', new Chart(ownCtx, {
+      type: 'doughnut',
+      data: {
+        labels: Object.keys(owners),
+        datasets: [{ data: Object.values(owners), backgroundColor: ['#4d9fff','#a78bfa','#22d3ee','#0fd98a'], borderWidth: 0 }]
+      },
+      options: { plugins: { legend: { position: 'right' } }, responsive: true, maintainAspectRatio: false }
+    }));
+  }
+
+  // Populate Table Rows
+  const tbody = document.getElementById(`${ds==='wealthlite'?'wl':'pmf'}-tbody`);
+  tbody.innerHTML = items.map((r,idx) => {
+    const isSip = (r.name||'').toLowerCase().includes('sip');
+    const isTax = (r.name||'').toLowerCase().includes('tax') || (r.name||'').toLowerCase().includes('elss');
+    return `
+      <tr>
+        <td data-col="name" style="font-weight:500;text-align:left">
+          ${r.name}
+          ${isSip?'<span class="tag tag-sip">SIP</span>':''}
+          ${isTax?'<span class="tag tag-elss">ELSS</span>':''}
+        </td>
+        ${ds==='personalmf'? `<td data-col="owner">${r.owner||'—'}</td>`:''}
+        <td data-col="units" class="mono">${r.units? r.units.toFixed(3):'0'}</td>
+        <td data-col="purchaseNAV" class="mono">${r.purchaseNAV? r.purchaseNAV.toFixed(4):'0'}</td>
+        <td data-col="currentNAV" class="mono">${r.currentNAV? r.currentNAV.toFixed(4):'0'}</td>
+        <td data-col="invested" class="mono">${fmtCur(r.invested)}</td>
+        <td data-col="totalValue" class="mono" style="font-weight:500">${fmtCur(r.totalValue)}</td>
+        <td data-col="totalGainLoss" class="mono ${r.totalGainLoss>=0?'g':'r'}">${fmtCur(r.totalGainLoss)}</td>
+        <td data-col="returnPct" class="mono"><span class="pill ${r.returnPct>=0?'g':'r'}">${fmtPct(r.returnPct)}</span></td>
+        <td data-col="dailyGainLoss" class="mono ${r.dailyGainLoss>=0?'g':'r'}">${fmtCur(r.dailyGainLoss)}</td>
+        <td data-col="actions">
+          <div class="ra">
+            <button class="ab" onclick="openEditModal('${ds}', ${idx})"><i class="fa fa-pen"></i></button>
+            <button class="ab del" onclick="deleteEntry('${ds}', ${idx})"><i class="fa fa-trash-can"></i></button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
   applyColumnVisibility(ds);
 }
 
-// ══ EQUITY RENDERER (shared for indianeq + useq) ══
-function buildIEPage(){
-  const rows=db.indianeq;
-  const inv=rows.reduce((s,r)=>s+safeNum(r.invested),0),val=rows.reduce((s,r)=>s+safeNum(r.totalValue),0),gl=rows.reduce((s,r)=>s+safeNum(r.totalGainLoss),0),daily=rows.reduce((s,r)=>s+safeNum(r.dailyGainLoss),0);
-  buildSum('ie-sum',inv,val,gl,daily);
-  document.getElementById('ie-sub').textContent=`${rows.length} stocks · NSE/BSE · ${inr(inv,true)} invested`;
-  const top8=[...rows].sort((a,b)=>b.totalValue-a.totalValue).slice(0,8);
-  mkChart('ie-top-c',{type:'bar',data:{labels:top8.map(r=>r.symbol||sn(r.name,14)),datasets:[{label:'Value',data:top8.map(r=>r.totalValue),backgroundColor:PAL.slice(0,8).map(c=>c+'cc'),borderRadius:4,borderSkipped:false}]},options:{
-      indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['ie-top-c'];setChartSearch('ie-top-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${inr(c.raw)}`}}},scales:{x:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:9},callback:v=>inr(v,true)}},y:{grid:{display:false},ticks:{color:'#c0cce0',font:{size:9}}}}}});
-  const byExch={};
-  rows.forEach(r=>{byExch[r.exchange]=(byExch[r.exchange]||0)+r.totalValue;});
-  const exchLabels=Object.keys(byExch);
-  mkChart('ie-exch-c',{type:'doughnut',data:{labels:exchLabels,datasets:[{data:exchLabels.map(e=>byExch[e]),backgroundColor:['#a78bfa','#22d3ee','#f7c054'],borderWidth:0,hoverOffset:4}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['ie-exch-c'];setChartSearch('ie-exch-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'right',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:6}},tooltip:{callbacks:{label:c=>` ${inr(c.raw,true)} (${(c.raw/val*100).toFixed(1)}%)`}}}}});
-  const byOwner={};
-  rows.forEach(r=>{const o=r.owner||'Unassigned';byOwner[o]=(byOwner[o]||0)+r.totalValue;});
-  const ownerLabels=Object.keys(byOwner);
-  mkChart('ie-owner-c',{type:'doughnut',data:{labels:ownerLabels,datasets:[{data:ownerLabels.map(o=>byOwner[o]),backgroundColor:PAL,borderWidth:0,hoverOffset:4}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['ie-owner-c'];setChartSearch('ie-owner-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'right',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:6}},tooltip:{callbacks:{label:c=>` ${inr(c.raw,true)} (${(c.raw/val*100).toFixed(1)}%)`}}}}});
-  renderEq('indianeq');
-}
-function buildUSPage(){
-  const rows=db.useq;
-  const inv=rows.reduce((s,r)=>s+r.invested,0),val=rows.reduce((s,r)=>s+r.totalValue,0),gl=rows.reduce((s,r)=>s+r.totalGainLoss,0);
-  const invINR=inv*usdInrRate,valINR=val*usdInrRate,glINR=gl*usdInrRate;
-  document.getElementById('us-sum').innerHTML=`
-    <div class="sum-card" style="--c:var(--blue)"><div class="sum-label">Invested</div><div class="sum-val">$${inv.toFixed(2)}</div><div class="sum-sub">${inr(invINR,true)}</div><i class="fa fa-wallet sum-icon"></i></div>
-    <div class="sum-card" style="--c:var(--green)"><div class="sum-label">Current Value</div><div class="sum-val">$${val.toFixed(2)}</div><div class="sum-sub">${inr(valINR,true)}</div><i class="fa fa-chart-line sum-icon"></i></div>
-    <div class="sum-card" style="--c:${gl>=0?'var(--green)':'var(--red)'}"><div class="sum-label">Gain / Loss</div><div class="sum-val" style="--vc:${gl>=0?'var(--green)':'var(--red)'}">${(gl>=0?'+':'')+'$'+Math.abs(gl).toFixed(2)}</div><div class="sum-sub">${(glINR>=0?'+':'')+inr(Math.abs(glINR),true)} · ${pct(inv?gl/inv*100:0)}</div><i class="fa fa-arrow-trend-up sum-icon"></i></div>
-    <div class="sum-card" style="--c:var(--teal)"><div class="sum-label">USD / INR Rate</div><div class="sum-val">₹${usdInrRate.toFixed(2)}</div><div class="sum-sub">${lastLiveUpdate?'Live · '+lastLiveUpdate.toLocaleTimeString():'Last known rate'}</div><i class="fa fa-right-left sum-icon"></i></div>`;
-  document.getElementById('us-sub').textContent=`${rows.length} stocks · NASDAQ · $${inv.toFixed(2)} (${inr(invINR,true)}) invested`;
-  const top8=[...rows].sort((a,b)=>b.totalValue-a.totalValue).slice(0,8);
-  mkChart('us-top-c',{type:'bar',data:{labels:top8.map(r=>r.symbol||sn(r.name,14)),datasets:[{label:'Value ($)',data:top8.map(r=>r.totalValue),backgroundColor:PAL.slice(0,8).map(c=>c+'cc'),borderRadius:4,borderSkipped:false}]},options:{
-      indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['us-top-c'];setChartSearch('us-top-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.raw.toFixed(2)} (${inr(c.raw*usdInrRate,true)})`}}},scales:{x:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:9},callback:v=>'$'+v}},y:{grid:{display:false},ticks:{color:'#c0cce0',font:{size:9}}}}}});
-  mkChart('us-weight-c',{type:'doughnut',data:{labels:rows.map(r=>r.symbol||sn(r.name,16)),datasets:[{data:rows.map(r=>r.invested),backgroundColor:PAL,borderWidth:0,hoverOffset:4}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['us-weight-c'];setChartSearch('us-weight-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'right',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:6}},tooltip:{callbacks:{label:c=>` ${(c.raw/inv*100).toFixed(1)}%`}}}}});
-  renderEq('useq');
-}
+// ── Equity Page Renderer ──
 function renderEq(ds){
-  const pfx={indianeq:'ie',useq:'us'}[ds];
-  const q=(document.getElementById(pfx+'-q').value||'').toLowerCase();
-  const glf=document.getElementById(pfx+'-gl-f')?document.getElementById(pfx+'-gl-f').value:'';
-  const exchf=document.getElementById(pfx+'-exch-f')?document.getElementById(pfx+'-exch-f').value:'';
-  const ownerf=document.getElementById(pfx+'-owner-f')?document.getElementById(pfx+'-owner-f').value:'';
-  let rows=getSorted(ds);
-  if(q)rows=rows.filter(r=>r.name.toLowerCase().includes(q)||r.symbol.toLowerCase().includes(q));
-  if(glf==='g')rows=rows.filter(r=>r.totalGainLoss>0);
-  if(glf==='l')rows=rows.filter(r=>r.totalGainLoss<0);
-  if(exchf)rows=rows.filter(r=>r.exchange===exchf);
-  if(ownerf)rows=rows.filter(r=>r.owner===ownerf);
-  const isUS=ds==='useq';
-  const fmt=isUS?usd:inr;
-  document.getElementById(pfx+'-cnt').textContent=rows.length+' stocks';
-  document.getElementById(pfx+'-tot').textContent='Value: '+(isUS?'$'+rows.reduce((s,r)=>s+r.totalValue,0).toFixed(2)+' ('+inr(rows.reduce((s,r)=>s+r.totalValue,0)*usdInrRate,true)+')':inr(rows.reduce((s,r)=>s+r.totalValue,0)));
-  const dual=(v)=>isUS?`${usd(v)}<div style="font-size:10px;color:var(--muted);font-weight:400">${inr(v*usdInrRate,true)}</div>`:fmt(v);
-  document.getElementById(pfx+'-tbody').innerHTML=rows.map(r=>{
-    const idx=db[ds].indexOf(r);
-    const exchTag=r.exchange==='NSE'?'tag-nse':r.exchange==='BSE'?'tag-bse':'tag-nasdaq';
-    return`<tr>
-      <td data-col="name" style="font-weight:500;max-width:200px"><div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.name}</div></td>
-      ${ds==='indianeq'?`<td data-col="owner"><span class="pill b">${r.owner||'—'}</span></td>`:''}
-      <td data-col="symbol" class="mono" style="color:var(--blue)">${r.symbol}</td>
-      <td data-col="exchange"><span class="tag ${exchTag}">${r.exchange}</span></td>
-      <td data-col="units" class="mono">${typeof r.units==='number'&&r.units<1?r.units.toFixed(4):r.units}</td>
-      <td data-col="avgPrice" class="mono">${fmt(r.avgPrice)}</td>
-      <td data-col="currentPrice" class="mono">${fmt(r.currentPrice)}</td>
-      <td data-col="invested" class="mono">${dual(r.invested)}</td>
-      <td data-col="totalValue" class="mono" style="font-weight:600">${dual(r.totalValue)}</td>
-      <td data-col="totalGainLoss"><span class="pill ${glCls(r.totalGainLoss)}">${r.totalGainLoss>=0?'▲':'▼'} ${dual(Math.abs(r.totalGainLoss))}</span></td>
-      <td data-col="returnPct"><span class="pill ${glCls(r.returnPct)}">${pct(r.returnPct)}</span></td>
-      ${!isUS?`<td data-col="dailyGainLoss" class="mono" style="color:${r.dailyGainLoss>0?'var(--green)':r.dailyGainLoss<0?'var(--red)':'var(--muted)'}">${r.dailyGainLoss!=null?inr(r.dailyGainLoss):'—'}</td>`:''}
-      <td data-col="actions"><div class="ra"><button class="ab" onclick="openEditModal('${ds}',${idx})"><i class="fa fa-pen"></i></button><button class="ab del" onclick="delEntry('${ds}',${idx})"><i class="fa fa-trash"></i></button></div></td>
-    </tr>`;
-  }).join('')||emptyRow(isUS?10:12);
+  let items = [...db[ds]];
+
+  // Filters & Search
+  const q = document.getElementById(`${ds==='indianeq'?'ie':'us'}-q`).value.toLowerCase().trim();
+  if(q){
+    items = items.filter(r => (r.name||'').toLowerCase().includes(q) || (r.symbol||'').toLowerCase().includes(q));
+  }
+  if(ds==='indianeq'){
+    const owner = document.getElementById('ie-owner-f').value;
+    if(owner) items = items.filter(r => r.owner === owner);
+    const exch = document.getElementById('ie-exch-f').value;
+    if(exch) items = items.filter(r => r.exchange === exch);
+    const glFilter = document.getElementById('ie-gl-f').value;
+    if(glFilter) items = items.filter(r => glFilter==='g' ? r.totalGainLoss>=0 : r.totalGainLoss<0);
+  }
+
+  // Sort Execution
+  const sortOption = document.getElementById(`${ds==='indianeq'?'ie':'us'}-sort`).value;
+  const sortColState = sortState[ds].col;
+  if (sortColState) {
+    const asc = sortState[ds].asc;
+    items.sort((a,b) => {
+      let va = a[sortColState], vb = b[sortColState];
+      if (typeof va === 'string') return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+      return asc ? va - vb : vb - va;
+    });
+  } else if(sortOption){
+    if(sortOption==='name') items.sort((a,b) => a.name.localeCompare(b.name));
+    else items.sort((a,b) => b[sortOption] - a[sortOption]);
+  }
+
+  let totInv=0, totVal=0, totDaily=0;
+  items.forEach(r => { totInv += safeNum(r.invested); totVal += safeNum(r.totalValue); totDaily += safeNum(r.dailyGainLoss); });
+  const totGl = totVal - totInv;
+  const totRet = totInv ? (totGl/totInv*100) : 0;
+
+  const symbol_curr = ds==='indianeq'?'₹':'$';
+  document.getElementById(`${ds==='indianeq'?'ie':'us'}-sub`).textContent = `Active registered asset counters: ${items.length}`;
+  document.getElementById(`${ds==='indianeq'?'ie':'us'}-cnt`).textContent = `${items.length} stocks`;
+  document.getElementById(`${ds==='indianeq'?'ie':'us'}-tot').textContent = `Inv: ${fmtCur(totInv, symbol_curr)} | Val: ${fmtCur(totVal, symbol_curr)} | Return: ${fmtPct(totRet)}`;
+
+  document.getElementById(`${ds==='indianeq'?'ie':'us'}-sum').innerHTML = `
+    <div class="sum-card" style="--c:var(--blue)">
+      <div class="sum-label">Total Invested</div><div class="sum-val">${fmtCur(totInv, symbol_curr)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--green)">
+      <div class="sum-label">Current Value</div><div class="sum-val">${fmtCur(totVal, symbol_curr)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--gold)">
+      <div class="sum-label">Gain / Loss</div><div class="sum-val ${totGl>=0?'g':'r'}">${fmtCur(totGl, symbol_curr)}</div>
+      <div class="sum-sub ${totGl>=0?'g':'r'}">${fmtPct(totRet)} overall</div>
+    </div>
+  `;
+
+  // Render Charts
+  if(ds==='indianeq'){
+    const topHoldings = [...items].sort((a,b)=>b.totalValue-a.totalValue).slice(0, 6);
+    const topCtx = document.getElementById('ie-top-c').getContext('2d');
+    trackChart('ie-top', new Chart(topCtx, {
+      type: 'bar',
+      data: {
+        labels: topHoldings.map(r=>r.name),
+        datasets: [{ data: topHoldings.map(r=>r.totalValue), backgroundColor: '#4d9fff', borderRadius: 4 }]
+      },
+      options: { plugins: { legend: { display: false } }, responsive: true, maintainAspectRatio: false }
+    }));
+
+    const exch = {NSE:0, BSE:0};
+    items.forEach(r => {if(r.exchange==='BSE') exch.BSE += r.totalValue; else exch.NSE += r.totalValue;});
+    const exchCtx = document.getElementById('ie-exch-c').getContext('2d');
+    trackChart('ie-exch', new Chart(exchCtx, {
+      type: 'pie',
+      data: {
+        labels: ['NSE', 'BSE'],
+        datasets: [{ data: [exch.NSE, exch.BSE], backgroundColor: ['#a78bfa','#22d3ee'], borderWidth: 0 }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    }));
+
+    const owners = {};
+    items.forEach(r => owners[r.owner||'Unknown'] = (owners[r.owner||'Unknown']||0) + safeNum(r.totalValue));
+    const ownCtx = document.getElementById('ie-owner-c').getContext('2d');
+    trackChart('ie-own', new Chart(ownCtx, {
+      type: 'doughnut',
+      data: {
+        labels: Object.keys(owners),
+        datasets: [{ data: Object.values(owners), backgroundColor: ['#4d9fff','#a78bfa','#22d3ee','#0fd98a'], borderWidth: 0 }]
+      },
+      options: { plugins: { legend: { position: 'right' } }, responsive: true, maintainAspectRatio: false }
+    }));
+  } else {
+    const topCtx = document.getElementById('us-top-c').getContext('2d');
+    trackChart('us-top', new Chart(topCtx, {
+      type: 'bar',
+      data: {
+        labels: items.map(r=>r.name),
+        datasets: [{ label: 'USD Value', data: items.map(r=>r.totalValue), backgroundColor: '#f7c054', borderRadius: 4 }]
+      },
+      options: { plugins: { legend: { display: false } }, responsive: true, maintainAspectRatio: false }
+    }));
+
+    const wCtx = document.getElementById('us-weight-c').getContext('2d');
+    trackChart('us-weight', new Chart(wCtx, {
+      type: 'doughnut',
+      data: {
+        labels: items.map(r=>r.symbol),
+        datasets: [{ data: items.map(r=>r.invested), backgroundColor: ['#4d9fff','#0fd98a','#f7c054','#a78bfa','#22d3ee','#f7546a'], borderWidth: 0 }]
+      },
+      options: { plugins: { legend: { position: 'right' } }, responsive: true, maintainAspectRatio: false }
+    }));
+  }
+
+  // Generate Table Markup
+  const tbody = document.getElementById(`${ds==='indianeq'?'ie':'us'}-tbody`);
+  tbody.innerHTML = items.map((r,idx) => {
+    const isNSE = r.exchange==='NSE';
+    const tagClass = isNSE ? 'tag-nse' : (r.exchange==='BSE' ? 'tag-bse' : 'tag-nasdaq');
+    return `
+      <tr>
+        <td data-col="name" style="font-weight:500">${r.name}</td>
+        ${ds==='indianeq'? `<td data-col="owner">${r.owner||'—'}</td>` : ''}
+        <td data-col="symbol" class="mono">${r.symbol||'—'}</td>
+        <td data-col="exchange"><span class="tag ${tagClass}">${r.exchange||'—'}</span></td>
+        <td data-col="units" class="mono">${r.units? r.units.toFixed(r.units%1===0?0:3) : '0'}</td>
+        <td data-col="avgPrice" class="mono">${r.avgPrice? r.avgPrice.toFixed(2) : '0.00'}</td>
+        <td data-col="currentPrice" class="mono">${r.currentPrice? r.currentPrice.toFixed(2) : '0.00'}</td>
+        <td data-col="invested" class="mono">${fmtCur(r.invested, symbol_curr)}${ds==='useq'?' / '+fmtCur(r.invested*usdInrRate):''}</td>
+        <td data-col="totalValue" class="mono" style="font-weight:500">${fmtCur(r.totalValue, symbol_curr)}${ds==='useq'?' / '+fmtCur(r.totalValue*usdInrRate):''}</td>
+        <td data-col="totalGainLoss" class="mono ${r.totalGainLoss>=0?'g':'r'}">${fmtCur(r.totalGainLoss, symbol_curr)}${ds==='useq'?' / '+fmtCur(r.totalGainLoss*usdInrRate):''}</td>
+        <td data-col="returnPct" class="mono"><span class="pill ${r.returnPct>=0?'g':'r'}">${fmtPct(r.returnPct)}</span></td>
+        ${ds==='indianeq'? `<td data-col="dailyGainLoss" class="mono ${r.dailyGainLoss>=0?'g':'r'}">${fmtCur(r.dailyGainLoss)}</td>` : ''}
+        <td data-col="actions">
+          <div class="ra">
+            <button class="ab" onclick="openEditModal('${ds}', ${idx})"><i class="fa fa-pen"></i></button>
+            <button class="ab del" onclick="deleteEntry('${ds}', ${idx})"><i class="fa fa-trash-can"></i></button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
   applyColumnVisibility(ds);
 }
 
-// ══ SGB PAGE ══
-function buildSGBPage(){
-  const rows=db.sgb;
-  const inv=rows.reduce((s,r)=>s+r.invested,0),val=rows.reduce((s,r)=>s+r.totalValue,0),gl=rows.reduce((s,r)=>s+r.totalGainLoss,0);
-  buildSum('sgb-sum',inv,val,gl,0);
-  document.getElementById('sgb-sub').textContent=`${rows.length} bond(s) · Sovereign Gold Bond`;
-  mkChart('sgb-cmp-c',{type:'bar',data:{labels:rows.map(r=>sn(r.name,18)),datasets:[{label:'Invested',data:rows.map(r=>r.invested),backgroundColor:'#4d9fff66',borderRadius:3},{label:'Current Value',data:rows.map(r=>r.totalValue),backgroundColor:'#f7c05499',borderRadius:3}]},options:{
-      responsive:true,maintainAspectRatio:false,
-      onClick:(evt,active)=>{if(active.length){const chart=charts['sgb-cmp-c'];setChartSearch('sgb-cmp-c',chart.data.labels[active[0].index]);}},
-      plugins:{legend:{position:'bottom',labels:{color:'#6b7fa3',font:{size:10},boxWidth:8,padding:8}},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${inr(c.raw)}`}}},scales:{x:{grid:{display:false},ticks:{color:'#6b7fa3',font:{size:9}}},y:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b7fa3',font:{size:9},callback:v=>inr(v,true)}}}}});
-  renderSGB();
-}
+// ── SGB Page Renderer ──
 function renderSGB(){
-  const q=(document.getElementById('sgb-q').value||'').toLowerCase();
-  let rows=getSorted('sgb');
-  if(q)rows=rows.filter(r=>r.name.toLowerCase().includes(q)||r.symbol.toLowerCase().includes(q));
-  document.getElementById('sgb-cnt').textContent=rows.length+' entries';
-  document.getElementById('sgb-tot').textContent='Value: '+inr(rows.reduce((s,r)=>s+r.totalValue,0));
-  document.getElementById('sgb-tbody').innerHTML=rows.map(r=>{
-    const idx=db.sgb.indexOf(r);
-    return`<tr>
-      <td data-col="name" style="font-weight:500">${r.name}<span class="tag tag-elss">SGB</span></td>
-      <td data-col="symbol" class="mono" style="color:var(--blue)">${r.symbol}</td>
+  let items = [...db.sgb];
+  const q = document.getElementById('sgb-q').value.toLowerCase().trim();
+  if(q){
+    items = items.filter(r => (r.name||'').toLowerCase().includes(q) || (r.symbol||'').toLowerCase().includes(q));
+  }
+
+  const sortOption = document.getElementById('sgb-sort').value;
+  const sortColState = sortState.sgb.col;
+  if (sortColState) {
+    const asc = sortState.sgb.asc;
+    items.sort((a,b) => {
+      let va = a[sortColState], vb = b[sortColState];
+      if (typeof va === 'string') return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+      return asc ? va - vb : vb - va;
+    });
+  } else if(sortOption){
+    items.sort((a,b) => b[sortOption] - a[sortOption]);
+  }
+
+  let totInv=0, totVal=0;
+  items.forEach(r => { totInv += safeNum(r.invested); totVal += safeNum(r.totalValue); });
+  const totGl = totVal - totInv;
+  const totRet = totInv ? (totGl/totInv*100) : 0;
+
+  document.getElementById('sgb-sub').textContent = `Total active Gold SGB holdings: ${items.length}`;
+  document.getElementById('sgb-cnt').textContent = `${items.length} bonds`;
+  document.getElementById('sgb-tot').textContent = `Inv: ${fmtCur(totInv)} | Val: ${fmtCur(totVal)} | Return: ${fmtPct(totRet)}`;
+
+  document.getElementById('sgb-sum').innerHTML = `
+    <div class="sum-card" style="--c:var(--gold)">
+      <div class="sum-label">Total Gold Invested</div><div class="sum-val">${fmtCur(totInv)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--green)">
+      <div class="sum-label">Current Bond Value</div><div class="sum-val">${fmtCur(totVal)}</div>
+    </div>
+    <div class="sum-card" style="--c:var(--blue)">
+      <div class="sum-label">Net Return Profile</div><div class="sum-val ${totGl>=0?'g':'r'}">${fmtCur(totGl)}</div>
+      <div class="sum-sub ${totGl>=0?'g':'r'}">${fmtPct(totRet)} total gain</div>
+    </div>
+  `;
+
+  // Plot Gold Invested vs Current Comparison Charts
+  const sCtx = document.getElementById('sgb-cmp-c').getContext('2d');
+  trackChart('sgb-cmp', new Chart(sCtx, {
+    type: 'bar',
+    data: {
+      labels: items.map(r => r.name),
+      datasets: [
+        { label: 'Invested', data: items.map(r=>r.invested), backgroundColor: '#1d2a3a' },
+        { label: 'Current Value', data: items.map(r=>r.totalValue), backgroundColor: '#f7c054', borderRadius: 4 }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false }
+  }));
+
+  const tbody = document.getElementById('sgb-tbody');
+  tbody.innerHTML = items.map((r,idx) => `
+    <tr>
+      <td data-col="name" style="font-weight:500">${r.name}</td>
+      <td data-col="symbol" class="mono">${r.symbol}</td>
       <td data-col="units" class="mono">${r.units}</td>
-      <td data-col="purchasePrice" class="mono">${inr(r.purchasePrice)}</td>
-      <td data-col="currentPrice" class="mono">${inr(r.currentPrice)}</td>
-      <td data-col="invested" class="mono">${inr(r.invested)}</td>
-      <td data-col="totalValue" class="mono" style="font-weight:600">${inr(r.totalValue)}</td>
-      <td data-col="totalGainLoss"><span class="pill ${glCls(r.totalGainLoss)}">${r.totalGainLoss>=0?'▲':'▼'} ${inr(Math.abs(r.totalGainLoss))}</span></td>
-      <td data-col="returnPct"><span class="pill ${glCls(r.returnPct)}">${pct(r.returnPct)}</span></td>
-      <td data-col="actions"><div class="ra"><button class="ab" onclick="openEditModal('sgb',${idx})"><i class="fa fa-pen"></i></button><button class="ab del" onclick="delEntry('sgb',${idx})"><i class="fa fa-trash"></i></button></div></td>
-    </tr>`;
-  }).join('')||emptyRow(9);
+      <td data-col="purchasePrice" class="mono">${fmtCur(r.purchasePrice)}</td>
+      <td data-col="currentPrice" class="mono">${fmtCur(r.currentPrice)}</td>
+      <td data-col="invested" class="mono">${fmtCur(r.invested)}</td>
+      <td data-col="totalValue" class="mono" style="font-weight:500">${fmtCur(r.totalValue)}</td>
+      <td data-col="totalGainLoss" class="mono ${r.totalGainLoss>=0?'g':'r'}">${fmtCur(r.totalGainLoss)}</td>
+      <td data-col="returnPct" class="mono"><span class="pill ${r.returnPct>=0?'g':'r'}">${fmtPct(r.returnPct)}</span></td>
+      <td data-col="actions">
+        <div class="ra">
+          <button class="ab" onclick="openEditModal('sgb', ${idx})"><i class="fa fa-pen"></i></button>
+          <button class="ab del" onclick="deleteEntry('sgb', ${idx})"><i class="fa fa-trash-can"></i></button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
   applyColumnVisibility('sgb');
 }
 
-function emptyRow(cols){return`<tr><td colspan="${cols}" style="text-align:center;padding:40px;color:var(--muted)"><i class="fa fa-circle-xmark" style="font-size:24px;display:block;margin-bottom:8px;opacity:.3"></i>No entries match your filter</td></tr>`;}
-
-// ── MODAL ──
-let modDS='',modIdx=-1;
-const FIELDS={
-  fd:[{k:'bank',l:'Bank / Institution',full:true},{k:'fdNumber',l:'FD Number',t:'number'},{k:'rate',l:'Interest Rate (%)',t:'number'},{k:'startDate',l:'Start Date',t:'date'},{k:'maturityDate',l:'Maturity Date',t:'date'},{k:'maturityValue',l:'Maturity Value (₹)',t:'number'},{k:'invested',l:'Invested (₹)',t:'number'},{k:'status',l:'Status',opts:['Active','Matured']},{k:'totalValue',l:'Current Value (₹)',t:'number'},{k:'totalGainLoss',l:'Gain/Loss (₹)',t:'number'},{k:'dailyGainLoss',l:'Daily G/L (₹)',t:'number'},{k:'returnPct',l:'Return (%)',t:'number'}],
-  wealthlite:[{k:'name',l:'Fund Name',full:true},{k:'schemeCode',l:'Scheme Code',t:'number'},{k:'owner',l:'Owner'},{k:'units',l:'Units',t:'number'},{k:'purchaseNAV',l:'Purchase NAV',t:'number'},{k:'currentNAV',l:'Current NAV',t:'number'},{k:'invested',l:'Invested (₹)',t:'number'},{k:'totalValue',l:'Current Value (₹)',t:'number'},{k:'totalGainLoss',l:'Gain/Loss (₹)',t:'number'},{k:'returnPct',l:'Return (%)',t:'number'},{k:'dailyGainLoss',l:'Daily G/L (₹)',t:'number'}],
-  personalmf:[{k:'name',l:'Fund Name',full:true},{k:'schemeCode',l:'Scheme Code',t:'number'},{k:'owner',l:'Owner'},{k:'units',l:'Units',t:'number'},{k:'purchaseNAV',l:'Purchase NAV',t:'number'},{k:'currentNAV',l:'Current NAV',t:'number'},{k:'invested',l:'Invested (₹)',t:'number'},{k:'totalValue',l:'Current Value (₹)',t:'number'},{k:'totalGainLoss',l:'Gain/Loss (₹)',t:'number'},{k:'returnPct',l:'Return (%)',t:'number'},{k:'dailyGainLoss',l:'Daily G/L (₹)',t:'number'}],
-  indianeq:[{k:'name',l:'Stock Name',full:true},{k:'owner',l:'Owner'},{k:'symbol',l:'Symbol'},{k:'exchange',l:'Exchange',opts:['NSE','BSE']},{k:'units',l:'Qty',t:'number'},{k:'avgPrice',l:'Avg Price (₹)',t:'number'},{k:'currentPrice',l:'CMP (₹)',t:'number'},{k:'invested',l:'Invested (₹)',t:'number'},{k:'totalValue',l:'Value (₹)',t:'number'},{k:'totalGainLoss',l:'Gain/Loss (₹)',t:'number'},{k:'returnPct',l:'Return (%)',t:'number'},{k:'dailyGainLoss',l:'Daily G/L (₹)',t:'number'}],
-  useq:[{k:'name',l:'Stock Name',full:true},{k:'symbol',l:'Symbol'},{k:'exchange',l:'Exchange'},{k:'units',l:'Units',t:'number'},{k:'avgPrice',l:'Avg Price ($)',t:'number'},{k:'currentPrice',l:'CMP ($)',t:'number'},{k:'invested',l:'Invested ($)',t:'number'},{k:'totalValue',l:'Value ($)',t:'number'},{k:'totalGainLoss',l:'G/L ($)',t:'number'},{k:'returnPct',l:'Return (%)',t:'number'},{k:'dailyGainLoss',l:'Daily G/L',t:'number'}],
-  sgb:[{k:'name',l:'Bond Name',full:true},{k:'symbol',l:'Symbol'},{k:'type',l:'Type'},{k:'units',l:'Units',t:'number'},{k:'purchasePrice',l:'Purchase Price (₹)',t:'number'},{k:'currentPrice',l:'Current Price (₹)',t:'number'},{k:'invested',l:'Invested (₹)',t:'number'},{k:'totalValue',l:'Value (₹)',t:'number'},{k:'totalGainLoss',l:'Gain/Loss (₹)',t:'number'},{k:'returnPct',l:'Return (%)',t:'number'},{k:'dailyGainLoss',l:'Daily G/L',t:'number'}]
+// ══ MODAL FORM CONTROLLER ══
+let formScope = null, editIndex = null;
+const formConfig = {
+  fd:[
+    {key:'bank',label:'Bank Name',type:'text',req:true},
+    {key:'fdNumber',label:'FD Account Number',type:'text'},
+    {key:'invested',label:'Invested Amount (₹)',type:'number',req:true},
+    {key:'rate',label:'Interest Rate %',type:'number'},
+    {key:'startDate',label:'Start Date',type:'date'},
+    {key:'maturityDate',label:'Maturity Date',type:'date'},
+    {key:'maturityValue',label:'Maturity Value (₹)',type:'number'},
+    {key:'totalValue',label:'Current Value (₹)',type:'number',req:true},
+    {key:'status',label:'Status',type:'select',options:['Active','Matured']}
+  ],
+  wealthlite:[
+    {key:'name',label:'Mutual Fund Name',type:'text',req:true},
+    {key:'schemeCode',label:'AMFI Scheme Code',type:'number',req:true},
+    {key:'units',label:'Units Quantity',type:'number',req:true},
+    {key:'purchaseNAV',label:'Purchase NAV (₹)',type:'number',req:true},
+    {key:'currentNAV',label:'Current NAV (₹)',type:'number',req:true},
+    {key:'invested',label:'Total Invested Capital (₹)',type:'number',req:true}
+  ],
+  personalmf:[
+    {key:'name',label:'Mutual Fund Name',type:'text',req:true},
+    {key:'schemeCode',label:'AMFI Scheme Code',type:'number',req:true},
+    {key:'owner',label:'Owner Name',type:'select',options:['Vigneshwaran','Nandhini','Appa','Family']},
+    {key:'units',label:'Units Quantity',type:'number',req:true},
+    {key:'purchaseNAV',label:'Purchase NAV (₹)',type:'number',req:true},
+    {key:'currentNAV',label:'Current NAV (₹)',type:'number',req:true},
+    {key:'invested',label:'Total Invested Capital (₹)',type:'number',req:true}
+  ],
+  indianeq:[
+    {key:'name',label:'Company Name',type:'text',req:true},
+    {key:'symbol',label:'Ticker Symbol',type:'text',req:true},
+    {key:'exchange',label:'Exchange',type:'select',options:['NSE','BSE']},
+    {key:'owner',label:'Owner Name',type:'select',options:['Vigneshwaran','Appa']},
+    {key:'units',label:'Quantity Purchased',type:'number',req:true},
+    {key:'avgPrice',label:'Average Price Paid (₹)',type:'number',req:true},
+    {key:'currentPrice',label:'Current Market Price (₹)',type:'number',req:true},
+    {key:'invested',label:'Total Investment Cost (₹)',type:'number',req:true}
+  ],
+  useq:[
+    {key:'name',label:'Asset Name',type:'text',req:true},
+    {key:'symbol',label:'Ticker Symbol',type:'text',req:true},
+    {key:'exchange',label:'Exchange Marketplace',type:'text'},
+    {key:'units',label:'Stock Share Volume',type:'number',req:true},
+    {key:'avgPrice',label:'Average Unit Price ($)',type:'number',req:true},
+    {key:'currentPrice',label:'Current Price ($)',type:'number',req:true},
+    {key:'invested',label:'Total Spent Capital ($)',type:'number',req:true}
+  ],
+  sgb:[
+    {key:'name',label:'Bond Name Label',type:'text',req:true},
+    {key:'symbol',label:'Ticker Code',type:'text'},
+    {key:'units',label:'Unit Quantities',type:'number',req:true},
+    {key:'purchasePrice',label:'Buy Price Per Unit',type:'number',req:true},
+    {key:'currentPrice',label:'Current Price Per Unit',type:'number',req:true},
+    {key:'invested',label:'Total Gold Cost Base (₹)',type:'number',req:true}
+  ]
 };
-function openAddModal(ds){modDS=ds;modIdx=-1;renderModal({});}
-function openEditModal(ds,idx){modDS=ds;modIdx=idx;renderModal(db[ds][idx]);}
-function renderModal(data){
-  const fields=FIELDS[modDS]||[];
-  document.getElementById('mod-title').textContent=(modIdx>=0?'Edit':'Add')+' Entry';
-  document.getElementById('mod-fields').innerHTML=fields.map(f=>`
-    <div class="fl${f.full?' full':''}">
-      <label>${f.l}</label>
-      ${f.opts?`<select class="fi" id="mf-${f.k}"><option value="">—</option>${f.opts.map(o=>`<option${data[f.k]===o?' selected':''}>${o}</option>`).join('')}</select>`:
-      `<input class="fi" id="mf-${f.k}" type="${f.t||'text'}" value="${data[f.k]??''}" placeholder="${f.l}">`}
-    </div>`).join('');
+
+function openAddModal(scope){
+  formScope = scope; editIndex = null;
+  document.getElementById('mod-title').textContent = `Add to ${scope.toUpperCase()}`;
+  buildFormFields(scope);
   document.getElementById('overlay').classList.add('open');
 }
-function closeMod(e){if(e&&e.target!==document.getElementById('overlay'))return;document.getElementById('overlay').classList.remove('open');}
-function saveEntry(){
-  const fields=FIELDS[modDS]||[];
-  const entry={};
-  for(const f of fields){
-    const el=document.getElementById('mf-'+f.k);
-    if(!el)continue;
-    entry[f.k]=f.t==='number'?+el.value||0:el.value;
+function openEditModal(scope, idx){
+  formScope = scope; editIndex = idx;
+  document.getElementById('mod-title').textContent = `Modify ${scope.toUpperCase()} Entry`;
+  buildFormFields(scope, db[scope][idx]);
+  document.getElementById('overlay').classList.add('open');
+}
+function closeMod(e){
+  if(!e || e.target.id==='overlay' || e.target.className==='mc-btn' || e.target.textContent==='Cancel'){
+    document.getElementById('overlay').classList.remove('open');
   }
-  if(modIdx>=0)db[modDS][modIdx]=entry;
-  else db[modDS].push(entry);
+}
+function buildFormFields(scope, data={}){
+  const container = document.getElementById('mod-fields');
+  container.innerHTML = formConfig[scope].map(field => {
+    const val = data[field.key] !== undefined ? data[field.key] : '';
+    let inputEl = '';
+    if(field.type==='select'){
+      inputEl = `<select class="fi" id="f-${field.key}">
+        ${field.options.map(opt => `<option value="${opt}" ${String(val)===String(opt)?'selected':''}>${opt}</option>`).join('')}
+      </select>`;
+    } else {
+      inputEl = `<input class="fi" type="${field.type}" id="f-${field.key}" value="${val}" step="any" placeholder="Enter ${field.label.toLowerCase()}" ${field.req?'required':''}>`;
+    }
+    return `
+      <div class="fl ${field.full?'full':''}">
+        <label>${field.label}</label>
+        ${inputEl}
+      </div>
+    `;
+  }).join('');
+}
+function saveEntry(){
+  const scope = formScope;
+  const config = formConfig[scope];
+  const item = {};
+
+  for(const f of config){
+    const el = document.getElementById(`f-${f.key}`);
+    if(f.req && !el.value.trim()){
+      showToast(`Field: ${f.label} is required`,'err');
+      return;
+    }
+    item[f.key] = f.type==='number' ? +el.value : el.value;
+  }
+
+  // Auto Calculations
+  if(scope==='wealthlite'||scope==='personalmf'){
+    item.totalValue = +(item.units * item.currentNAV).toFixed(2);
+    item.totalGainLoss = +(item.totalValue - item.invested).toFixed(2);
+    item.returnPct = item.invested? +(item.totalGainLoss/item.invested*100).toFixed(2) : 0;
+  } else if(scope==='indianeq'||scope==='useq'){
+    item.totalValue = +(item.units * item.currentPrice).toFixed(2);
+    item.totalGainLoss = +(item.totalValue - item.invested).toFixed(2);
+    item.returnPct = item.invested? +(item.totalGainLoss/item.invested*100).toFixed(2) : 0;
+  } else if(scope==='sgb'){
+    item.totalValue = +(item.units * item.currentPrice).toFixed(2);
+    item.totalGainLoss = +(item.totalValue - item.invested).toFixed(2);
+    item.returnPct = item.invested? +(item.totalGainLoss/item.invested*100).toFixed(2) : 0;
+  } else if(scope==='fd'){
+    item.totalGainLoss = +(item.totalValue - item.invested).toFixed(2);
+    item.returnPct = item.invested? +(item.totalGainLoss/item.invested*100).toFixed(2) : 0;
+  }
+
+  if(editIndex!==null){
+    db[scope][editIndex] = item;
+    showToast('Record saved successfully','ok');
+  } else {
+    db[scope].push(item);
+    showToast('Record added successfully','ok');
+  }
+  
   saveDB();
-  document.getElementById('overlay').classList.remove('open');
-  toast(modIdx>=0?'Entry updated':'Entry added','ok');
-  const renders={fd:buildFDPage,wealthlite:buildWLPage,personalmf:buildPMFPage,indianeq:buildIEPage,useq:buildUSPage,sgb:buildSGBPage};
-  if(renders[modDS])renders[modDS]();
-  updateSidebar();
+  closeMod();
+  updateAllPages();
 }
-function delEntry(ds,idx){
-  if(!confirm('Delete this entry?'))return;
-  db[ds].splice(idx,1);saveDB();
-  toast('Entry deleted','ok');
-  const renders={fd:buildFDPage,wealthlite:buildWLPage,personalmf:buildPMFPage,indianeq:buildIEPage,useq:buildUSPage,sgb:buildSGBPage};
-  if(renders[ds])renders[ds]();
-  updateSidebar();
+function deleteEntry(scope, idx){
+  if(confirm('Are you sure you want to delete this record?')){
+    db[scope].splice(idx, 1);
+    saveDB();
+    showToast('Record deleted successfully','ok');
+    updateAllPages();
+  }
 }
 
-// ── CSV IMPORT / EXPORT ──
-function exportCSV(ds){
-  const rows=db[ds];if(!rows||!rows.length)return;
-  const keys=Object.keys(rows[0]);
-  const csv=[keys.join(','),...rows.map(r=>keys.map(k=>`"${r[k]??''}"`).join(','))].join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download=`${ds}_${new Date().toISOString().slice(0,10)}.csv`;a.click();
-  toast('CSV downloaded','ok');
+// ══ CSV IMPORT / EXPORT ══
+function exportCSV(scope){
+  const cols = tableColumnConfig[scope];
+  const header = cols.map(c => `"${c.label}"`).join(',');
+  const rows = db[scope].map(r => {
+    return cols.map(c => {
+      let val = r[c.key];
+      if (val === undefined) val = '';
+      return `"${String(val).replace(/"/g, '""')}"`;
+    }).join(',');
+  });
+  
+  const csvText = [header, ...rows].join('\n');
+  const blob = new Blob([csvText], {type: 'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `portfolio_${scope}_${new Date().toISOString().substring(0, 10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast(`${scope.toUpperCase()} exported to CSV successfully`,'ok');
 }
+
+function parseCSV(text, config){
+  const lines = text.split(/\r?\n/).filter(Boolean);
+  if(lines.length<2) return [];
+  const header = lines[0].split(',').map(h=>h.replace(/"/g,'').trim());
+  
+  const parsedItems = [];
+  for(let i=1; i<lines.length; i++){
+    const cols = lines[i].split(',').map(c=>c.replace(/"/g,'').trim());
+    if(cols.length < config.length) continue;
+    const row = {};
+    config.forEach(field => {
+      const colIdx = header.findIndex(h => h.toLowerCase() === field.label.toLowerCase());
+      if(colIdx !== -1) {
+        const rawVal = cols[colIdx];
+        if (field.key === 'owner') {
+          // Replace both Vignesh and Mahesh to Vigneshwaran on import
+          row[field.key] = (rawVal === 'Vignesh' || rawVal === 'Mahesh') ? 'Vigneshwaran' : rawVal;
+        } else {
+          row[field.key] = (field.key==='invested'||field.key==='units'||field.key==='totalValue'||field.key==='purchaseNAV'||field.key==='currentNAV'||field.key==='avgPrice'||field.key==='currentPrice'||field.key==='rate'||field.key==='purchasePrice') ? +rawVal : rawVal;
+        }
+      }
+    });
+    parsedItems.push(row);
+  }
+  return parsedItems;
+}
+
+function handleCSVData(text, scope){
+  try {
+    const config = formConfig[scope];
+    const items = parseCSV(text, config);
+    if(items.length===0) throw new Error('No valid records found in CSV file.');
+    db[scope] = items;
+    saveDB();
+    showToast(`Successfully imported ${items.length} records into ${scope.toUpperCase()}`,'ok');
+    updateAllPages();
+  } catch(e) {
+    showToast(`Import Error: ${e.message}`, 'err');
+  }
+}
+
 function importCSV(e){
-  const file=e.target.files[0];if(!file)return;
-  const ds=document.getElementById('import-target').value;
-  const reader=new FileReader();
-  reader.onload=ev=>parseAndLoad(ev.target.result,ds);
-  reader.readAsText(file);e.target.value='';
+  const file = e.target.files[0];
+  if(!file) return;
+  const scope = document.getElementById('import-target').value;
+  const reader = new FileReader();
+  reader.onload = function(evt){
+    handleCSVData(evt.target.result, scope);
+  };
+  reader.readAsText(file);
 }
+
 function dropCSV(e){
-  e.preventDefault();document.getElementById('uzone').classList.remove('drag');
-  const file=e.dataTransfer.files[0];if(!file)return;
-  const ds=document.getElementById('import-target').value;
-  const reader=new FileReader();reader.onload=ev=>parseAndLoad(ev.target.result,ds);reader.readAsText(file);
-}
-function parseAndLoad(text,ds){
-  const lines=text.trim().split('\n');
-  const headers=lines[0].split(',').map(h=>h.trim().replace(/\r/,''));
-  const rows=lines.slice(1).filter(l=>l.trim()).map(line=>{
-    const vals=line.split(',').map(v=>v.trim().replace(/\r|"/g,''));
-    const obj={};
-    headers.forEach((h,i)=>{const v=vals[i]||'';obj[h]=isNaN(v)||v===''?v:+v;});
-    return obj;
-  }).filter(r=>Object.values(r).some(v=>v));
-  if(!rows.length){toast('No valid rows found','err');return;}
-  db[ds]=rows;saveDB();
-  toast(`Imported ${rows.length} rows into ${ds}`,'ok');
-  updateSidebar();
+  e.preventDefault();
+  document.getElementById('uzone').classList.remove('drag');
+  const file = e.dataTransfer.files[0];
+  if(!file) return;
+  const scope = document.getElementById('import-target').value;
+  const reader = new FileReader();
+  reader.onload = function(evt){
+    handleCSVData(evt.target.result, scope);
+  };
+  reader.readAsText(file);
 }
 
-// ── TOAST ──
-function toast(msg,type='ok'){
-  const el=document.createElement('div');
-  el.className='toast '+type;
-  el.innerHTML=`<i class="fa ${type==='ok'?'fa-circle-check':'fa-circle-xmark'}" style="color:${type==='ok'?'var(--green)':'var(--red)'}"></i>${msg}`;
-  document.getElementById('toasts').appendChild(el);
-  setTimeout(()=>el.remove(),3000);
-}
-
-// ── INIT ──
-document.addEventListener('DOMContentLoaded',()=>{
+// Initialize application state on start
+window.addEventListener('DOMContentLoaded', () => {
   initColumnPickers();
-  buildDashboard();
+  updateAllPages();
+  // Attempt to fetch fresh prices silently on start
   refreshAllLivePrices();
-  setInterval(refreshAllLivePrices,5*60*1000); // auto-refresh every 5 min
 });
-document.addEventListener('click',e=>{if(!e.target.closest('.col-picker-wrap'))document.querySelectorAll('.col-picker.open').forEach(el=>el.classList.remove('open'));});
 </script>
 </body>
 </html>
